@@ -1,0 +1,28 @@
+.sentiment-chart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0;
+    background: rgba(255, 255, 255, 0.05); /* Subtle transparency */
+    backdrop-filter: blur(10px); /* Glassmorphism effect */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 15px rgba(0, 255, 204, 0.3); /* Outer neon glow */
+  }
+  
+  .pie-chart-glow {
+    filter: drop-shadow(0px 0px 15px rgba(0, 255, 204, 0.8)); /* Glow effect */
+    animation: pulseGlow 2s infinite alternate; /* Soft pulsing animation */
+  }
+  
+  @keyframes pulseGlow {
+    0% {
+      filter: drop-shadow(0px 0px 10px rgba(0, 255, 204, 0.6));
+    }
+    100% {
+      filter: drop-shadow(0px 0px 20px rgba(0, 255, 204, 1));
+    }
+  }
+  
+
+  

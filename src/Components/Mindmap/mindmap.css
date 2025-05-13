@@ -1,0 +1,114 @@
+.mindmap-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f7fa;
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.mindmap-editor {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.mindmap-editor input {
+    width: 250px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.mindmap-editor button {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.mindmap-editor button:hover {
+    background-color: #45a049;
+}
+
+.mindmap {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* SVG for drawing lines */
+.mindmap-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.mindmap-node {
+    background-color: #3E8EED;
+    color: white;
+    width: 150px;
+    height: 80px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    cursor: move;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.2s;
+    box-sizing: border-box;
+    position: absolute;
+}
+
+.mindmap-node:hover {
+    transform: scale(1.1);
+}
+
+.mindmap-node:active {
+    background-color: #357ABD;
+}
+
+/* Context menu styles */
+.context-menu {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 3;
+}
+
+.context-menu ul {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+}
+
+.context-menu li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.context-menu li:hover {
+    background-color: #f4f7fa;
+}

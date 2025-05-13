@@ -1,0 +1,652 @@
+
+
+  .noveldashboard-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    background-color:#fafcffff;
+    width: 100%;
+}
+
+      
+
+.noveldashboard-Add-plot-icon{
+  width:20px;
+  height: 20px;
+  background-color: #1F2247;
+  margin-left:80px;
+  background: transparent;
+  cursor:pointer;
+}
+
+
+.noveldashboard-Add-character-icon{
+  width:20px;
+  height: 20px;
+  background-color: #1F2247;
+  margin-left:40px;
+  background: transparent;
+  cursor:pointer;
+}
+
+
+.noveldashboard-Add-collaborator-icon{
+  width:20px;
+  height: 20px;
+  background-color: #1F2247;
+  margin-left:20px;
+  background: transparent;
+  cursor:pointer;
+}
+
+.noveldashboard-Add-collaborator-icon:hover,
+.noveldashboard-Add-character-icon:hover,
+.noveldashboard-Add-plot-icon:hover{
+
+  background-color: white;
+  border-radius: 10px;
+
+}
+
+
+
+
+.noveldashboard-dashboard{
+  display: flex;
+  flex-direction: row;
+  width:93%;
+  height: 90vh;
+  background-color: white;
+  margin-left: 90px;
+  padding:10px;
+  border-radius: 10px;
+  margin-top: -10px;
+
+}
+
+
+
+.noveldashboard-sidebar{
+  position: relative;
+  width: 15%;
+  height: 90vh;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  z-index:1;
+ 
+}
+
+  /* Left sidebar styling */
+  .novelside-sidebar {
+    width: 100%;
+    height: 100vh;
+    background-color: #e1dbd6; /* Dark grey for sidebar background */
+    overflow-y: auto;
+    padding:10px;
+    display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border-top-left-radius: 5px;
+  border:1px solid rgb(122, 118, 112);
+  overflow-x: hidden;
+   
+    
+  }
+  
+  .novelside-sidebar h3 {
+    color: black;
+    font-size: 1.2rem;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .novelside-add-chapter input{
+    border-radius:10px;
+    width: 90%;
+    padding:10px;
+    margin-bottom: 10px;
+  }
+  
+  .novelside-sidebar ul {
+    list-style: none;
+    color: #191B30;
+    padding: 0;
+    width: 100%;
+    margin-left:10px;
+    overflow: auto;
+  }
+
+
+  .novelside-sidebar li {
+    margin-bottom: 10px;
+    width: 90%;
+    height: 30px;
+    padding: 5px;
+    border: 1px solid #f46f36;
+    border-radius: 10px;
+    background-color: white;
+    transition: all 0.2s ease-in-out; /* added transition */
+    overflow: hidden;
+  }
+  
+  .novelside-sidebar li:hover {
+    background-color: #ffffff;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* added box-shadow */
+    transform: translateY(-2px); /* added transform */
+  }
+
+  .chapter-text {
+    position: relative;
+    margin-left: 200px;
+    margin-top: -50px;
+    font-size: 14px;
+    color: #000000;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.2s;
+    z-index: 30;
+    pointer-events: none; /* add this to prevent hover events from triggering on the text */
+  }
+  
+  .novelside-sidebar li:hover .chapter-text {
+    opacity: 1;
+  }
+
+  .novelside-sidebar a {
+    color: black;/* Slightly lighter text color */
+    text-decoration: none;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 1rem;
+    border-radius: 10px;
+    white-space: normal; /* Allow text to wrap */
+    overflow-x: visible; /* Allow the text to be fully visible */
+    text-overflow: clip; /* Do not clip the text */
+    word-wrap: break-word; /* Ensure long words are broken onto the next line */
+    display: block; /* Makes sure it takes full width and height */
+}
+
+.novelside-sidebar a:hover {
+    background-color:   #ffffff;
+    z-index: 1; /* Ensures the element is above others */
+    position: relative; /* Stacks it on top when hovered */
+    padding: 5px;
+}
+
+
+  .novelside-add-chapter{
+    width: 180px;
+  }
+
+  .novelside-add-chapter-button{
+    padding:7px;
+    background-color:  #fafcffff;
+    color: #191B30;
+    border-radius: 5px;
+    border: 2px solid #191B30;
+    cursor:pointer;
+    font-weight: bold;
+    margin-left: 17px;
+  }
+
+  .novelside-add-chapter-button:hover{
+    background-color: #f46f36 ;
+    color:white;
+
+  }
+
+
+
+
+.noveldashboard-editor{
+ width: 65%;
+ height: 100vh;
+ 
+
+}
+
+
+.editor{
+  width:100%;
+  height: 100vh;
+  overflow: auto;
+}
+
+
+
+
+.noveldashboard-notes{
+    
+    width: 20%;
+    height: 100vh;
+    background-color: #f9f6f2;
+    border:1px solid #c7c1bc;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    color:black;
+    
+ 
+
+}
+
+
+.noveldashboard-notes-section {
+    width: 90%;
+    background-color: #f9f6f2;
+    padding: 10px; /* Remove bottom padding or adjust as needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align items to the start (top) of the container */
+    font-family: 'Kanit', sans-serif;
+    height:70%;
+    border-bottom-right-radius: 10px;
+    overflow: hidden;
+}
+
+.noveldashboard-notes-header {
+    display: flex; /* Use flexbox to align items horizontally */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center content in the header */
+    position: relative; /* Position the button relative to this container */
+    gap:20px;
+ 
+}
+
+.noveldashboard-add-note {
+    position: relative;
+    margin-left: -80px;
+    margin-top: 40px;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #897865;
+    background: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.noveldashboard-plus-icon {
+    width: 20px; /* Adjust width */
+    height: 20px; /* Adjust height */
+    
+}
+
+.noveldashboard-notes-header h2{
+  margin-top: 30px;
+  color: black;
+  font-size: 30px;
+  font-weight: 300;
+  border-bottom: 2px solid black;
+  margin-left: 30px;
+}
+
+
+
+.noveldashboard-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  
+}
+
+.noveldashboard-button {
+  padding: 10px;
+  background-color: #191B30;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 300;
+  border: 2px solid #e1dbd6;
+  width: 100px;
+ 
+}
+
+.noveldashboard-button:hover {
+  background-color: white;
+  color:black;
+}
+
+.noveldashboard-buttons{
+  padding: 10px;
+  justify-content: center;
+  
+
+}
+
+.noveldashboard-modal {
+    /* Container styles */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 210px;
+    transform: translate(-50%, -50%);
+    background-color: #f9f6f2; /* Light background color */
+    border-radius: 12px; /* More rounded corners */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Slightly more shadow */
+    padding: 20px;
+    position: relative; /* Relative positioning for the close button */
+}
+
+.noveldashboard-modal h2 {
+    position: absolute;
+    top: 10px; /* Adjust this value as needed */
+    left: 170px; /* Adjust this value as needed for horizontal positioning */
+    font-size: 20px;
+    color: #191B30;
+    margin: 0; /* Remove default margin */
+    font-weight: 500;
+    font-family: 'Kanit', sans-serif;
+}
+
+.noveldashboard-modal-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  width: 100%;
+  height: 150px;
+}
+
+.noveldashboard-note-text{
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  font-size: 15px;
+  text-align: start;
+  font-family: sans-serif;
+  padding:10px;
+  resize: none;
+
+}
+
+.novelboard-notes-save-button{
+  background-color: #191B30;
+  color: white;
+  padding:10px;
+  border-radius: 3px;
+  margin-top: 10px;
+  cursor: pointer;
+  margin-left: 170px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+
+}
+
+.novelboard-notes-save-button:hover{
+  background-color: white;
+  color: black;
+}
+
+
+.noveldashboard-close-button {
+    position: absolute; /* Absolute positioning */
+    top: 5px; /* Distance from the top */
+    right: 10px; /* Distance from the right */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.noveldashboard-close-icon {
+    width: 18px; /* Smaller size */
+    height: 18px;
+}
+
+.noveldashboard-close-icon:hover {
+    opacity: 0.6; /* Lighter opacity on hover */
+    background-color: none;
+}
+
+
+
+.noveldashboard-notes-list {
+    list-style: none;
+    padding: 0;
+    padding-top: 20px;
+    margin: 0;
+}
+
+.noveldashboard-notes-list li {
+    position: relative;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px 40px 10px 10px; /* Added extra padding on the right */
+    margin-bottom: 10px;
+    overflow: hidden; /* Ensure content doesn’t overflow */
+    word-wrap: break-word; /* Break long words if needed */
+    box-sizing: border-box; /* Include padding and border in the element’s total width and height */
+    color: #191B30;
+}
+
+.noveldashboard-notes-list li:hover {
+    background-color: #F47D4B;
+    color: #191B30;
+}
+
+.noveldashboard-notes-section .scrollable {
+    flex: 1; /* Make it take the remaining space */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.noveldashboard-note-text .ql-toolbar {
+    height: 100px; /* Adjust the height as needed */
+    padding: 4px;
+}
+
+.noveldashboard-note-text .ql-toolbar .ql-formats {
+    margin: 0;
+}
+
+.noveldashboard-note-text .ql-toolbar button {
+    height: 32px; /* Adjust the button height to fit the toolbar height */
+    line-height: 32px; /* Align the text vertically */
+}
+
+.noveldashboard-close-note {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1; /* Ensure button is clickable above text */
+}
+
+.noveldashboard-close-note img {
+    width: 16px;
+    height: 16px;
+    display: block;
+    transition: opacity 0.3s; /* Smooth transition for hover effect */
+}
+
+.noveldashboard-close-note:hover img {
+    content: url('../Images/Close-black.png'); /* Switch to closeIcon2 on hover */
+}
+
+.noveldashboard-close-icon {
+    width: 16px;
+    height: 16px;
+    display: block;
+}
+
+.noveldashboard-close-icon:hover {
+    background-color: #191B30;
+    color: #F47D4B;
+}
+
+
+
+  
+
+
+
+
+
+
+  
+  /* Right preview panel styling */
+  .preview {
+    flex: 1;
+    background-color: #282828; /* Slightly lighter than the main background */
+    color: #e3e3e3;
+    padding: 20px;
+    height: 100vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .book-container {
+    width: 70%;
+    height: 80vh;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .book-cover {
+    width: 100%;
+    height: 30%;
+    background-color: #ddd;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .book-pages {
+    width: 90%;
+    height: 70%;
+    padding: 20px;
+    background-color: #f8f8f8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow-y: auto;
+  }
+  
+  .page-content {
+    width: 80%;
+    line-height: 1.6;
+    padding: 20px;
+    text-align: justify;
+  }
+  
+  .page-navigation {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+  }
+  
+  .page-navigation button {
+    background-color: #424242;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .page-navigation button:hover {
+    background-color: #616161;
+  }
+  
+  /* Text editor styling */
+  .text-editor {
+    flex: 2;
+    padding: 20px;
+    background-color: #202020;
+    color: #ffffff;
+  }
+  
+  .text-editor textarea {
+    width: 100%;
+    height: 90vh;
+    background-color: #202020;
+    color: #e3e3e3;
+    border: 1px solid #424242;
+    font-size: 1rem;
+    padding: 15px;
+    line-height: 1.6;
+  }
+  
+  .text-editor textarea:focus {
+    outline: none;
+    border: 1px solid #757575;
+  }
+  
+  /* Navigation bar and header styles */
+  .navbar {
+    background-color: #1f1f1f;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .navbar h1 {
+    color: #ffffff;
+    font-size: 1.5rem;
+  }
+  
+  .navbar .buttons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .navbar button {
+    background-color: #424242;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .navbar button:hover {
+    background-color: #616161;
+  }
+  
+  /* Chapter heading inside preview */
+  .preview .chapter-heading {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+  }
+  

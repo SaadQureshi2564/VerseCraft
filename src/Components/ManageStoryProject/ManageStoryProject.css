@@ -1,0 +1,141 @@
+
+/* Dashboard Styles */
+.progress-container{
+  background-color: #fefefe;
+}
+
+.ManageDashboard-dashboard {
+    overflow-y: auto; /* Add this line to make it scrollable vertically */
+    max-width: auto;
+    margin-left: 90px ;
+    padding-left: 5%;
+    border-radius: 5px;
+    padding: 40px;
+    background-color: #f9f6f2;
+    border: 1px solid #917c70;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-height: auto; /* Optional: Set a maximum height to trigger scrolling */
+
+  }
+  
+  .ManageStory-project-details {
+    margin-bottom: 40px;
+    background-color: #fefefe;
+  }
+  
+  .ManageStory-project-edit-form,
+  .ManageStory-project-info {
+    padding: 20px;
+    background-color: #fefefe;
+    border: 1px solid #ccc;
+  }
+  
+  .ManageStory-project-edit-form label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .ManageStory-project-edit-form input[type="text"],
+  .ManageStory-project-edit-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+  }
+  
+  .ManageStory-project-edit-form button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .ManageStory-project-edit-form button:hover {
+    background-color: #3e8e41;
+  }
+  
+  .ManageStory-project-info h2 {
+    margin-bottom: 10px;
+  }
+  
+  .ManageStory-project-info p {
+    margin-bottom: 20px;
+  }
+  
+  .ManageStory-project-info button {
+    padding: 10px 20px;
+    background-color: #191B30;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid black;
+  }
+  
+  .ManageStory-project-info button:hover {
+    background-color: white;
+    color:black;
+  }
+  
+  /* Chapters Styles */
+  
+  .ManageStory-chapters {
+    margin-bottom: 40px;
+  }
+  
+  .ManageStory-chapters-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .ManageStory-chapters-table th,
+  .ManageStory-chapters-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  .ManageStory-chapters-table th {
+    background-color: #fefefe;
+  }
+  
+  .ManageStory-edit-chapter-form,
+  .ManageStory-add-chapter-form {
+    padding: 20px;
+    background-color: #fefefe;
+    border: 1px solid #ccc;
+  }
+  
+  .ManageStory-edit-chapter-form label,
+  .ManageStory-add-chapter-form label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .ManageStory-edit-chapter-form input[type="text"],
+  .ManageStory-edit-chapter-form textarea,
+  .ManageStory-add-chapter-form input[type="text"],
+  .ManageStory-add-chapter-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+  }
+  
+  .ManageStory-edit-chapter-form button,
+  .ManageStory-add-chapter-form button {
+    padding: 10px 20px;
+    background-color: #191B30;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    border: 1px solid black;
+    cursor: pointer;
+  }
+  
+  .ManageStory-edit-chapter-form button:hover,
+  .ManageStory-add-chapter-form button:hover {
+    background-color: white;
+    color:black;
+  }

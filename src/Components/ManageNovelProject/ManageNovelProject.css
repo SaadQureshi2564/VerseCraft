@@ -1,0 +1,124 @@
+
+/* Novel Edit Section */
+.ManageNovel-edit-section {
+  margin-bottom: 40px;
+}
+
+.ManageNovel-edit-form, 
+.ManageNovel-chapter-edit-form, 
+.ManageNovel-add-chapter-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.ManageNovel-form-group {
+  margin-bottom: 15px;
+}
+
+.ManageNovel-form-group label {
+  font-weight: bold;
+}
+
+.ManageNovel-form-group input, 
+.ManageNovel-form-group textarea {
+  padding: 8px;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.ManageNovel-form-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.ManageNovel-save-button, 
+.ManageNovel-add-button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.ManageNovel-cancel-button, 
+.ManageNovel-delete-button {
+  padding: 10px 20px;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.ManageNovel-edit-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.ManageNovel-details {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.ManageNovel-chapters-management-section {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.ManageNovel-chapters-list {
+  margin-top: 20px;
+}
+
+.ManageNovel-chapter-item {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.ManageNovel-chapter-details h4 {
+  margin: 0 0 10px 0;
+}
+
+.ManageNovel-chapter-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.ManageNovel-add-chapter-section {
+  margin-top: 30px;
+}
+
+.ManageNovel-loader, 
+.ManageNovel-error {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.ManageNovel-loader {
+  font-size: 18px;
+  color: #007bff;
+}
+
+.ManageNovel-error {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+/* General Styles */
+.edit-button,
+.delete-button,
+.save-button,
+.cancel-button,
+.add-button {
+  /* Ensure buttons have consistent styling if shared */
+}
+
+/* Add any additional styles as needed */

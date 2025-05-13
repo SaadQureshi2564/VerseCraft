@@ -1,0 +1,418 @@
+/* src/styles/Avatar.css */
+.avatar-app-body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #2e004f, #4b0082, #900d1c, #ff6f61);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}                             
+
+.avatar-app-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+
+.avatar-app-header {
+    margin-bottom: 20px;
+    text-align: center;
+    color: white;
+}
+
+.avatar-main-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+
+.avatar-character-form {
+    background-color: rgba(255, 255, 255, 0.95); /* Slightly increased opacity for better visibility */
+    padding: 30px; /* Increased padding for better spacing */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 100%; /* Make the form take full width */
+    max-width: 800px; /* Optional: Set a max width for better readability on large screens */
+    margin: 20px auto; /* Center the form with top and bottom margins */
+    
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.avatar-character-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.avatar-character-history {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    width: 35%;
+    overflow-y: auto;
+    margin-right: 0; /* Remove margin to attach completely to right */
+}
+
+.avatar-avatar-generator-title {
+    background-color: #222; 
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 286px;
+}
+
+.avatar-avatar-generator-title h1 {
+    background: linear-gradient(to right, #900d1c, #8a2be2); /* Purplish-Reddish Gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* This ensures the gradient is behind the text */
+}
+
+.avatar-main-content h2 {
+    margin: 0 0 20px;
+    color: #333;
+}
+
+.avatar-character-form input,
+.avatar-character-form textarea,
+.avatar-character-form select {
+    width: 95%;
+    padding: 5px 6px; /* Slightly larger padding for better readability */
+    margin-bottom: 15px; /* Increased margin for better spacing */
+    border: 2px solid #e0e0e0; /* Thicker, softer border */
+    border-radius: 8px; /* More pronounced rounded corners */
+    background-color: #f9f9f9; /* Light background for modern look */
+    font-size: 16px; /* Increased font size for better UX */
+    color: #333; /* Dark text color for readability */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    outline: none; /* Remove default outline */
+}
+
+.avatar-character-form input:focus,
+.avatar-character-form textarea:focus,
+.avatar-character-form select:focus {
+    border-color: #007bff; /* Primary color border on focus */
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2); /* Subtle shadow for focus */
+}
+
+/* Hover effect for interactive feel */
+.avatar-character-form input:hover,
+.avatar-character-form textarea:hover,
+.avatar-character-form select:hover {
+    border-color: #0056b3; /* Darker shade on hover */
+}
+
+.avatar-character-form input[disabled],
+.avatar-character-form textarea[disabled],
+.avatar-character-form select[disabled] {
+    background-color: #e9ecef; /* Grey out background for disabled */
+    cursor: not-allowed; /* Show not-allowed cursor */
+    opacity: 0.65; /* Reduce opacity */
+}
+
+.avatar-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height to center vertically */
+}
+
+.avatar-generate-btn, 
+.avatar-export-btn, 
+.avatar-save-btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #8a2be2, #d32029); /* Purple-Red Gradient */
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.4s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin: 0 10px; /* Spacing between buttons */
+}
+
+.avatar-generate-btn:hover, 
+.avatar-export-btn:hover, 
+.avatar-save-btn:hover {
+    background: linear-gradient(135deg, #7a1bc2, #b31c24); /* Darker gradient on hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
+.avatar-button-group {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+/* Active/Pressed state */
+
+/* Avatar Preview */
+.avatar-avatar-preview {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 20px;
+    background-color: #e9ecef;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow-y: auto; 
+}
+
+.avatar-avatar-preview img {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 4px;
+    /* Chatbox Background Styling */
+    padding: 10px;
+    border: 1px solid #ccc; 
+    margin: 10px; 
+    background-color: #f5f5f5;
+}
+
+.avatar-avatar-preview img:nth-child(1) {
+    background-color: #FFF5EE; /* Light Yellow */
+}
+
+.avatar-avatar-preview img:nth-child(2) {
+    background-color: #F0FFF0; /* Light Green */
+}
+
+.avatar-avatar-preview img:nth-child(3) {
+    background-color: #F5F5DC; /* Light Beige */
+}
+
+/* History Item */
+.avatar-history-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.avatar-history-item button {
+    background-color: #dc3545;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.avatar-history-item button:hover {
+    background-color: #c82333;
+}
+
+/* Sidebar */
+.avatar-sidebar {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    transition: width 0.3s;
+    overflow-y: auto;
+}
+
+.avatar-sidebar.collapsed {
+    width: 0;
+    overflow: hidden;
+}
+
+.avatar-sidebar-toggle {
+    cursor: pointer;
+    color: white;
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-align: right;
+    width: 100%;
+}
+
+.avatar-sidebar h2 {
+    color: #f9f9f9; /* Light color for better contrast */
+}
+
+.avatar-sidebar li {
+    color: #f9f9f9; /* Lighter text color for better visibility */
+    margin-bottom: 10px;
+}
+
+.avatar-sidebar-btn {
+    background-color: #4CAF50; /* Customize button background color */
+    color: white; /* Button text color */
+    border: none; /* Remove default border */
+    padding: 10px 20px; /* Adjust padding for button text area */
+    text-align: center; /* Center text within the button */
+    border-radius: 50px; /* Rounded edges */
+    cursor: pointer; /* Cursor changes to pointer on hover */
+    width: fit-content; /* Button only takes up the space needed for its text */
+    transition: background-color 0.3s ease; /* Smooth transition effect for hover */
+}
+
+.avatar-sidebar-btn:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.avatar-sidebar-btn:active {
+    background-color: #3e8e41; /* Even darker green when active (clicked) */
+}
+
+/* Character Profiles */
+.avatar-character-profiles {
+    background-color: #f5f5f5; 
+    color: #333; 
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-right: 20px;
+    overflow-y: auto;
+    /* Make the profiles container scrollable */
+    height: calc(100vh - 120px);
+    /* Adjust height as needed */
+}
+
+.avatar-character-profiles h2 {
+    color: #222;
+    margin-bottom: 15px;
+}
+
+.avatar-profiles-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 20px;
+    padding: 10px;
+    /* Remove extra padding to utilize space efficiently */
+}
+
+.avatar-character-profile {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    /* Adjust shadow for a 3D effect */
+}
+
+/* Placeholder Styling */
+.avatar-character-profile.placeholder {
+    background-color: rgba(255, 255, 255, 0.1); 
+    color: rgba(255, 255, 255, 0.5);
+    border: 1px dashed #ccc;
+}
+
+/* Profile Image Styling */
+.avatar-profile-image {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.avatar-profile-image img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+}
+
+/* Table Styling */
+.avatar-character-profile table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+}
+
+.avatar-character-profile th,
+.avatar-character-profile td {
+    padding: 5px;
+    text-align: left;
+}
+
+.avatar-character-profile th {
+    font-weight: bold;
+    color: #333;
+}
+
+.avatar-character-profile td {
+    color: #555;
+}
+
+.avatar-character-profile tr:nth-child(even) {
+    background-color: #f8f8f8; 
+}
+
+.avatar-character-profile tr:hover {
+    background-color: #e9e9e9; 
+}
+
+.avatar-character-profile td:first-child {
+    font-weight: bold;
+}
+
+.avatar-character-profile td {
+    word-wrap: break-word;
+}
+
+/* Random Card Colors */
+.avatar-character-profile:nth-child(1) {
+    background-color: #FFF5EE; 
+}
+
+.avatar-character-profile:nth-child(2) {
+    background-color: #F0FFF0; 
+}
+
+.avatar-character-profile:nth-child(3) {
+    background-color: #F5F5DC; 
+}
+
+.avatar-character-profile:nth-child(4) {
+    background-color: #FAEBD7; 
+}
+
+.avatar-character-profile:nth-child(5) {
+    background-color: #E0FFFF; 
+}
+
+/* Repeat the colors for more profiles */
+.avatar-character-profile:nth-child(6) {
+    background-color: #FFF5EE; 
+}
+
+.avatar-character-profile:nth-child(7) {
+    background-color: #F0FFF0; 
+}
+
+/* ... and so on */
+
+/* Scrollbar Styling (Modern Look) */
+.avatar-character-profiles::-webkit-scrollbar {
+    width: 8px;
+}
+
+.avatar-character-profiles::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
+.avatar-character-profiles::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+}
+
+.avatar-character-profiles::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}

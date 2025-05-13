@@ -1,0 +1,316 @@
+
+
+/* Style for other elements in the container */
+.saved-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    background: #fefefe;
+}
+
+
+
+
+.savedworks-dashboard{
+    
+    height:83%;
+    background-color: #fefefe;
+    margin-top:5px;
+    margin-left:10px;
+    margin-right: 10px;
+    padding:10px
+   
+}
+  
+.saved-search-bar-container{
+  padding:6px;
+  width:fit-content;
+  align-self: end;
+  margin-left: 457.5px;
+  border-radius: 10px;
+  background-color: #dcdcdc;
+  display: flex;
+  flex-direction: row;
+}
+
+
+.saved-Search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+  }
+
+  .saved-Search-bar input{
+    margin: 0;
+  }
+  
+  .saved-search-input {
+    width: 800px; /* Make input full width */
+    height: 35px; /* Change input height */
+    font-size: 14px;
+    border-radius: 7px;
+
+  }
+
+  .saved-search-type {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  
+  .saved-search-type select {
+    padding: 8.5px;
+  
+    border-radius: 7px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .saved-search-sort select {
+    padding: 8.5px;
+    
+    border-radius: 7px;
+    font-size: 16px;
+    font-weight: 300;
+    cursor: pointer;
+  }
+
+  .saved-profile-info {
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    display: flex; /* Make flexbox */
+    flex-direction: column;
+    align-items: center; /* Align vertically */
+    padding: 10px; /* Add padding */
+   
+   
+    border-radius: 5px; /* Add rounded corners */
+    margin-top: -60px;
+    margin-left: 70px;
+  }
+
+.saved-profile-pic {
+  width: 250px; /* Adjust width */
+  height: 250px; /* Adjust height */
+  border-radius: 50%; /* Make circular */
+  overflow: hidden; /* Hide excess image */
+  margin-right: 10px; /* Add spacing */
+}
+
+.savedworks-profile-icon-major {
+  width: 100%; /* Make image full width */
+  height: 100%; /* Make image full height */
+  object-fit: cover; /* Maintain aspect ratio */
+}
+
+.saved-profile-name {
+  font-size: 18px; /* Adjust font size */
+  font-weight: bold; /* Make bold */
+  color: #333; /* Adjust text color */
+  margin-top: 20px;
+}
+
+.savedworks-profile-name-major {
+  font-size: 20px; /* Adjust font size */
+  font-weight: bold; /* Make bold */
+  color: #333; /* Adjust text color */
+}
+.saved-profile-followers{
+  display: flex;
+  flex-direction: row;
+  gap:10px
+
+}
+  
+  .saved-Works {
+    display: flex;
+    flex-direction: row;
+    padding: 24px;
+    gap: 20px;
+    position: absolute;
+    margin-left: 420px;
+  }
+  
+  .saved-Stories, .saved-Novels, .saved-Urdu {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    height: 270px;
+ 
+  }
+  
+  .saved-Stories h1, .saved-Novels h2, .saved-Urdu h2 {
+    margin-top: -10px;
+    padding-right:20px;
+    padding-left: 20px;
+    font-size: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+
+    
+  }
+  
+  .saved-Stories ul, .saved-Novels ul, .saved-Urdu ul {
+    list-style: none;
+    border-bottom:1px solid black ;
+    padding: 0;
+    margin: 10px;
+    scrollbar-color: rgb(222, 221, 221) white;
+    height: 100%;
+  }
+  
+  .saved-Stories li, .saved-Novels li, .saved-Urdu li {
+    padding: 5px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    font-weight: 300 !important;
+  }
+  
+  .saved-Stories li:hover, .saved-Novels li:hover, .saved-Urdu li:hover {
+    background-color: #f7f7f7;
+  }
+  
+  .saved-Stories li:last-child, .saved-Novels li:last-child, .saved-Urdu li:last-child {
+    border-bottom: none;
+  }
+  
+  /* Modal styles */
+  
+  .modal-title {
+    margin-top: 0;
+  }
+  
+  .modal-description {
+    margin-bottom: 16px;
+  }
+  
+  .recent-searches {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .recent-searches li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .recent-searches li:last-child {
+    border-bottom: none;
+  }
+/* Other styles remain unchanged */
+
+/* Ensure Recents section is styled properly */
+.saved-recents {
+  
+     /* Solid white background */
+    color: #191B30;
+ 
+    width: 96%;
+    height: fit-content;
+    display: block;
+    position: absolute;
+    padding: 10px; /* Add padding to prevent content from touching edges */
+    overflow: hidden;
+    top: 480px;
+    border-radius:10px ;
+  
+}
+
+/* Updated Recents heading */
+.saved-recents h1 {
+    font-family: 'Kanit', sans-serif;
+    color: white;
+    font-size: 20px;
+    font-weight: 300;
+    text-align: left; /* Align heading to the left */
+    background-color:#191B30;
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+    margin-left: -10px;
+    
+    margin-top: -20px;
+    border-bottom-right-radius: 10px;
+}
+
+
+.saved-recents-container {
+  overflow-x: auto;
+  white-space: nowrap;
+  width: 100%;
+  height: 100%;
+  scrollbar-width: none; /* For Firefox */
+  scrollbar-color: transparent transparent; /* Scrollbar thumb and track for Firefox */
+}
+
+/* For WebKit browsers (Chrome, Safari, Edge) */
+.saved-recents-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar */
+}
+.saved-recents-scroll {
+    display: flex; /* Align items horizontally */
+    flex-direction: row; /* Ensure items are in a row */
+    align-items: center; /* Center items vertically */
+    
+}
+
+.saved-recent-icon {
+    width: 200px; /* Adjust image size */
+    height: 100px;
+    border: 3px solid #191B30;
+   
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 10px; /* Optional: round corners of images */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: add shadow to images */
+}
+
+.saved-recents-item p {
+    font-family: 'Kanit', sans-serif;
+    color: #191B30;
+    margin-top: 5px; /* Space between image and title */
+    font-size: 14px;
+ 
+}
+
+
+
+
+
+/* Font styles */
+.kanit-thin, .kanit-extralight, .kanit-light, .kanit-regular, .kanit-medium, .kanit-semibold, .kanit-bold, .kanit-extrabold, .kanit-black,
+.kanit-thin-italic, .kanit-extralight-italic, .kanit-light-italic, .kanit-regular-italic, .kanit-medium-italic, .kanit-semibold-italic, .kanit-bold-italic, .kanit-extrabold-italic, .kanit-black-italic {
+    font-family: "Kanit", sans-serif;
+}
+
+.kanit-thin { font-weight: 100; }
+.kanit-extralight { font-weight: 200; }
+.kanit-light { font-weight: 300; }
+.kanit-regular { font-weight: 400; }
+.kanit-medium { font-weight: 500; }
+.kanit-semibold { font-weight: 600; }
+.kanit-bold { font-weight: 700; }
+.kanit-extrabold { font-weight: 800; }
+.kanit-black { font-weight: 900; }
+
+.kanit-thin-italic { font-weight: 100; font-style: italic; }
+.kanit-extralight-italic { font-weight: 200; font-style: italic; }
+.kanit-light-italic { font-weight: 300; font-style: italic; }
+.kanit-regular-italic { font-weight: 400; font-style: italic; }
+.kanit-medium-italic { font-weight: 500; font-style: italic; }
+.kanit-semibold-italic { font-weight: 600; font-style: italic; }
+.kanit-bold-italic { font-weight: 700; font-style: italic; }
+.kanit-extrabold-italic { font-weight: 800; font-style: italic; }
+.kanit-black-italic { font-weight: 900; font-style: italic; }

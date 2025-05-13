@@ -1,0 +1,1641 @@
+.character-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    background-color: #ffffff;
+    width: 100%;
+}
+
+
+  
+  
+
+
+
+/* Description Modal Overlay */
+.character-description-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure the modal is on top of other elements */
+}
+
+/* Description Modal Content */
+.character-description-modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 500px; /* Adjust as needed */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    
+}
+
+/* Close Button for Description Modal */
+.character-description-close-popup-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    background-color: #f47d4b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.character-description-close-popup-button:hover {
+    background-color: #d16c3f;
+}
+
+/* Textarea for Description Input */
+.character-description-textarea {
+    width: 100%;
+    height: 200px; /* Adjust as needed */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+    margin-bottom: 15px;
+}
+
+
+.character-overview {
+  
+    width: 12%;
+    height: 100%;
+    background: #e1dbd6;
+    position: relative;
+    padding: 0px;
+    border-radius: 5px;
+    padding-top: 5px;
+    border: 1px solid rgb(145, 134, 112);
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    white-space: normal;
+    overflow: hidden;
+    border-top-right-radius: 0px;
+   
+}
+
+
+/* CSS */
+.character-save-btn {
+  appearance: none;
+  background-color: #FFFFFF;
+  border-width: 0;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Clarkson,Helvetica,sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1em;
+  margin: 0;
+  opacity: 1;
+  outline: 0;
+  padding: 15px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-rendering: geometricprecision;
+
+  transition: opacity 300ms cubic-bezier(.694, 0, 0.335, 1),background-color 100ms cubic-bezier(.694, 0, 0.335, 1),color 100ms cubic-bezier(.694, 0, 0.335, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+  width: 90%;
+  border-radius: 5px;
+}
+
+.character-save-btn:before {
+  animation: opacityFallbackOut .5s step-end forwards;
+  backface-visibility: hidden;
+  background-color: #EBEBEB;
+  clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: translateZ(0);
+  transition: clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1), -webkit-clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1);
+  width: 100%;
+}
+
+.character-save-btn:hover:before {
+  animation: opacityFallbackIn 0s step-start forwards;
+  clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
+  color-scheme: black;
+}
+
+.character-save-btn:after {
+  background-color: #FFFFFF;
+  color-scheme: black;
+}
+
+.character-save-btn span {
+  z-index: 1;
+  position: relative;
+}
+
+
+
+/* CSS */
+.character-see-btn {
+  appearance: none;
+  background-color: #FFFFFF;
+  border-width: 0;
+  
+  width: 90%;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Clarkson,Helvetica,sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 5px;
+  letter-spacing: 0;
+  line-height: 1em;
+  margin: 0;
+  opacity: 1;
+  outline: 0;
+  padding: 15px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-rendering: geometricprecision;
+  
+  transition: opacity 300ms cubic-bezier(.694, 0, 0.335, 1),background-color 100ms cubic-bezier(.694, 0, 0.335, 1),color 100ms cubic-bezier(.694, 0, 0.335, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+.character-see-btn:before {
+  animation: opacityFallbackOut .5s step-end forwards;
+  backface-visibility: hidden;
+  background-color: #EBEBEB;
+  clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: translateZ(0);
+  transition: clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1), -webkit-clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1);
+  width: 100%;
+}
+
+.character-see-btn:hover:before {
+  animation: opacityFallbackIn 0s step-start forwards;
+  clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
+}
+
+.character-see-btn:after {
+  background-color: #FFFFFF;
+}
+
+.character-see-btn span {
+  z-index: 1;
+  position: relative;
+}
+
+.character-list {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Kanit', sans-serif;
+    color: #191B30;
+    margin-top: 20px;
+    padding: 3px;
+    width: 90%;
+    margin-left: 4px;
+    background-color: white;
+    border: 2px solid, #191B30;
+}
+
+.character-list__items {
+    list-style: none;
+    padding: 10px;
+    margin-left: 0px;
+    width: 88%;
+    display: grid;
+    row-gap: 10px;
+    margin-top: 20px;
+    max-height: 70%;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+.character-list__items::-webkit-scrollbar {
+    display: none;
+}
+
+.character-list__item {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: transform .25s cubic-bezier(.7, .98, .86, .98), box-shadow .25s cubic-bezier(.7, .98, .86, .98);
+    background-color: #ffffff;
+}
+
+.character-list__item:hover {
+    transform: scale(1.10);
+    box-shadow: 0 9px 47px 11px rgba(51, 51, 51, 0.18);
+    background-color: #191B30;
+}
+
+.character-list__picture {
+    width: 24px;
+    height: 24px;
+}
+
+.character-list__name {
+    color: #191B30;
+    font-weight: bold;
+    font-size: 15px;
+    font-family: "Kanit", sans-serif;
+    letter-spacing: 0.64px;
+    margin-left: 2px;
+}
+
+.character-list__item:hover .character-list__name {
+    color: white;
+}
+
+
+.character-main-dashboard{
+    display: flex;
+    flex-direction: row;
+    height: 87%;
+    width: 93%;
+    overflow: hidden;
+    border-radius:10px ;
+    border: 1px solid black;
+    margin-left: 90px;
+}
+
+.character-dashboard {
+    width: 88%;
+    height: 100%;
+    position: relative;
+    background-color: #f9f6f2;
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 10px;
+    overflow: auto;
+    border-top-left-radius: 0px;
+    
+}
+
+.character-dashboard {
+    /* ... existing styles ... */
+    scrollbar-width: thin;
+    scrollbar-color: #666 #f9f6f2;
+}
+
+.character-dashboard::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.character-dashboard::-webkit-scrollbar-thumb {
+    background-color: #666;
+    border-radius: 5px;
+}
+
+.character-dashboard::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+.character-dashboard::-webkit-scrollbar-track {
+    background-color: #f9f6f2;
+    border-radius: 5px;
+}
+
+.character-image {
+    position: relative;
+    width: 11%;
+    height: 20%;
+    background-color: white;
+    border-radius: 5px;
+    border: 2px solid #191B30;
+    resize: both;
+    overflow: auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 91;
+}
+
+.character-image:hover {
+    border-color: #F47D4B;
+    cursor: pointer;
+}
+
+.character-image h1 {
+    font-size: 15px;
+    font-family: "Kanit", sans-serif;
+    color: #191B30;
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+}
+
+.character-image-item {
+    display: flex;
+    margin: 10px 0;
+}
+
+.character-image-item__btn-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.character-upload-image {
+    width: 50%;
+    height: 50%;
+    margin-top: 10px;
+    z-index: 90;
+}
+
+.character-upload__image-wrapper {
+    width: auto;
+    height: auto;
+    background: transparent;
+}
+
+.character-image-select {
+    background-image: url("../Images/upload.png");
+   
+}
+
+.character-image-popup {
+    background-color: white;
+    border: 2px solid #191B30;
+    border-radius: 20px;
+    align-self: center;
+    margin-left: 26%;
+    margin-top: 210px;
+    width: 50%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.character-close-icon {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: -18px;
+    right: 10px;
+    cursor: pointer;
+
+}
+
+
+.character-uploader {
+    background-color: #191B30;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 24px;
+    font-family: "Kanit", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 50px;
+}
+
+.character-uploader:hover {
+    background-color: #F47D4B;
+    color: #191B30;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Modal overlay to cover the entire screen */
+.character-avatar-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Make sure the modal is on top of other elements */
+}
+
+/* Modal content (popup box) */
+.character-avatar-modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+     /* Adjust the width as per your need */
+    width: 1050px; /* Max width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    margin-top: 30px;
+    height: 570px;
+    margin-left: 410px;
+}
+
+/* Close button */
+.character-avatar-close-popup-button {
+   position: absolute;
+    padding: 10px 20px;
+    background-color: #f47d4b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-top: 0px;
+    cursor: pointer;
+    z-index: 1002;
+}
+
+.character-avatar-close-popup-button:hover {
+    background-color: #d16c3f;
+}
+
+
+.character-updater {
+    background-color: #191B30;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 20px;
+    font-family: "Kanit", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+    margin-top: 15px;
+}
+
+.character-updater:hover {
+    background-color: #F47D4B;
+    color: #191B30;
+}
+
+.character-remover {
+    background-color: #F47D4B;
+    color: #191B30;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 20px;
+    font-family: "Kanit", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.character-remover:hover {
+    background-color: #191B30;
+    color: white;
+    cursor: pointer;
+}
+
+.character-image-selected {
+    border-radius: 20px;
+    margin-left: 300px;
+    width: 150px;
+    height: 150px;
+    border: 2px solid #191B30;
+}
+
+.character-overview .character-save-button {
+    background-color: #191B30;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 20px;
+    font-family: "Kanit", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.character-overview .character-save-button:hover {
+    background-color: #F47D4B;
+    color: white;
+    cursor: pointer;
+}
+
+.character-modal-page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease;
+}
+
+.character-modal-page h1 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    margin-left: 50px;
+}
+
+.character-slide-in {
+    transform: translateX(0);
+}
+
+.character-slide-out {
+    transform: translateX(100%);
+}
+
+.character-next-page-button {
+    background-color: #191B30;
+    position: absolute;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 24px;
+    font-family: "Kanit", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 50px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.character-next-page-button:hover {
+    background-color: #F47D4B;
+    color: #191B30;
+}
+
+.character-back-button {
+    background-color: #191B30;
+    position: absolute;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 24px;
+    font-family: "Kanit", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    margin-top: -60px;
+}
+
+.character-back-button:hover {
+    background-color: #F47D4B;
+}
+
+.character-note-text {
+    margin-top: 250px;
+    width: 95%;
+    margin-left: 20px;
+    border: #191B30;
+    height: auto;
+}
+
+.character-ql-toolbar {
+    display: none;
+}
+
+.character-ql-editor {
+    border: 2px solid #191B30;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    outline: none;
+}
+
+.character-summary {
+    position: relative;
+    width: 86.5%;
+    height: 20%;
+    background-color: white;
+    border-radius: 5px;
+    border: 2px solid #191B30;
+    resize: both;
+    overflow: hidden;
+    box-sizing: border-box;
+    cursor: grab;
+    
+}
+
+.character-summary:hover {
+    border-color: #F47D4B;
+}
+
+.character-summary h1 {
+    font-size: 15px;
+    font-family: "Kanit", sans-serif;
+    color: #191B30;
+    margin: 0;
+    padding: 10px;
+}
+
+.character-summary-textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 1vw;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: none;
+    resize: none;
+    overflow-y:auto ;
+    overflow-x:hidden;
+}
+
+.character-summary-textarea:focus {
+    outline: none;
+}
+
+.character-backstory {
+    position: relative;
+    width: 72.5%;
+    height: 36.5%;
+    background-color: white;
+    border-radius: 5px;
+    border: 2px solid #191B30;
+    resize: both;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.character-backstory h1 {
+    font-size: 15px;
+    font-family: "Kanit", sans-serif;
+    color: #191B30;
+    margin: 0;
+    padding: 10px;
+}
+
+.character-backstory-textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 1vw;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: none;
+    overflow-y: auto;
+    overflow-x: hidden;
+    resize: none;
+}
+
+.character-backstory-textarea:focus {
+    outline: none;
+}
+
+.character-basic-info {
+    position: relative;
+    width: 300px;
+    height: 220px;
+    background-color: white;
+    border-radius: 5px;
+    overflow-y: auto;
+    border: 2px solid #191B30;
+      /* Hide scrollbar for WebKit browsers (Chrome, Safari) */
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.character-basic-info::-webkit-scrollbar {
+    display: none; /* WebKit browsers (Chrome, Safari) */
+}
+
+.character-basic-info:hover {
+    border-color: #F47D4B;
+}
+
+.character-basic-heading {
+    font-family: "Kanit", sans-serif;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.character-basic-info .character-name {
+    position: absolute;
+    font-family: "Kanit", sans-serif;
+    font-weight: 400px;
+    margin-top: 50px;
+    left: 10px;
+}
+
+.character-basic-info .character-age {
+    position: absolute;
+    font-family: "Kanit", sans-serif;
+    font-weight: 400px;
+    margin-top: 10px;
+    left: 10px;
+}
+
+.character-basic-info .character-gender {
+    position: absolute;
+    font-family: "Kanit", sans-serif;
+    font-weight: 400px;
+    margin-top: 150px;
+    left: 10px;
+}
+
+.character-basic-info .character-ethnicity {
+    position: absolute;
+    font-family: "Kanit", sans-serif;
+    font-weight: 400px;
+    margin-top: 180px;
+    left: 10px;
+}
+
+.character-basic-info .character-field {
+    margin-bottom: -15px;
+    width: 280px;
+    margin: 2px;
+}
+
+.character-basic-info .character-label {
+    font-weight: bold;
+    margin-left: -200px;
+    margin-top: -5px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.character-input-field {
+    width: 90%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.character-physical-traits {
+    position: relative;
+    width: 290px;
+    height: 140px;
+    background-color: white;
+    border-radius: 5px;
+    overflow: auto;
+    border: 2px solid #191B30;
+    padding: 10px;
+    resize: both;
+    min-width: 290px;
+    min-height: 140px;
+    box-sizing: border-box;
+    
+}
+
+.character-physical-traits:hover {
+    border-color: #F47D4B;
+}
+
+.character-physical-traits h1 {
+    font-size: 15px;
+    font-family: "Kanit", sans-serif;
+    font-weight: bold;
+    margin-top: -1px;
+    color: #191B30;
+}
+
+.character-add-physical {
+    position: absolute;
+    background-color: #191B30;
+    border: none;
+    align-items: center;
+    padding: 3px;
+    height: 30px;
+    border-radius: 5px;
+    border: 2px solid #191B30;
+    top: 3%;
+    left: 84%;
+    transform: translateX(-50%);
+}
+
+.character-add-physical:hover {
+    border-color: #F47D4B;
+}
+
+.character-physical-traits .character-plus-icon {
+    width: 20px;
+    height: 20px;
+    background: #191B30;
+    border: 10px;
+}
+
+.character-physical-traits .character-trait-item {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border: 2px solid #191B30;
+    border-radius: 5px;
+    position: relative;
+}
+
+.character-physical-traits .character-vert-icon {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.character-physical-traits .character-trait-name-input,
+.character-physical-traits .character-trait-description-textarea {
+    font-family: "Kanit", sans-serif;
+    font-size: 14px;
+    margin: 5px 0;
+    padding: 1px;
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    resize: none;
+}
+
+.character-physical-traits .character-trait-description-textarea {
+    height: 17px;
+}
+
+.character-physical-traits .character-trait-name-input:focus,
+.character-physical-traits .character-trait-description-textarea:focus {
+    outline: none;
+}
+
+.character-physical-traits::-webkit-scrollbar {
+    width: 5px;
+}
+
+.character-physical-traits::-webkit-scrollbar-track {
+    background-color: #191B30;
+    border-radius: 4px;
+}
+
+.character-physical-traits::-webkit-scrollbar-thumb {
+    background-color: #F47D4B;
+    border-radius: 4px;
+}
+
+.character-personality-traits {
+    position: relative;
+    width: 290px;
+    height: 140px;
+    background-color: white;
+    border-radius: 5px;
+    overflow: auto;
+    border: 2px solid #191B30;
+    padding: 10px;
+    resize: both;
+    min-width: 290px;
+    min-height: 140px;
+    box-sizing: border-box;
+}
+
+.character-personality-traits:hover {
+    border-color: #F47D4B;
+}
+
+.character-personality-traits h1 {
+    font-size: 15px;
+    font-family: "Kanit", sans-serif;
+    font-weight: bold;
+    margin-top: -1px;
+    color: #191B30;
+}
+
+.character-add-personality {
+    position: absolute;
+    background-color: #191B30;
+    border: none;
+    align-items: center;
+    padding: 3px;
+    height: 30px;
+    border-radius: 5px;
+    border: 2px solid #191B30;
+    top: 3%;
+    left: 84%;
+    transform: translateX(-50%);
+    
+}
+
+.character-add-personality:hover {
+    border-color: #F47D4B;
+}
+
+.character-personality-traits .character-plus-icon {
+    width: 20px;
+    height: 20px;
+    background: #191B30;
+    border: 10px;
+}
+
+.character-personality-traits .character-trait-item {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border: 2px solid #191B30;
+    border-radius: 5px;
+    position: relative;
+}
+
+.character-personality-traits .character-vert-icon {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.character-personality-traits .character-trait-name-input,
+.character-personality-traits .character-trait-description-textarea {
+    font-family: "Kanit", sans-serif;
+    font-size: 14px;
+    margin: 5px 0;
+    padding: 1px;
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    resize: none;
+}
+
+.character-personality-traits .character-trait-description-textarea {
+    height: 17px;
+}
+
+.character-personality-traits .character-trait-name-input:focus,
+.character-personality-traits .character-trait-description-textarea:focus {
+    outline: none;
+}
+
+.character-personality-traits::-webkit-scrollbar {
+    width: 5px;
+}
+
+.character-personality-traits::-webkit-scrollbar-track {
+    background-color: #191B30;
+    border-radius: 4px;
+}
+
+.character-personality-traits::-webkit-scrollbar-thumb {
+    background-color: #F47D4B;
+    border-radius: 4px;
+}
+
+.character-character-arcs {
+    position: relative;
+    width: 290px;
+    height: 140px;
+    background-color: white;
+    border-radius: 5px;
+    overflow: auto;
+    border: 2px solid #191B30;
+    padding: 10px;
+    resize: both;
+    min-width:290px;
+    min-height: 140px;
+    box-sizing: border-box;
+}
+
+.character-character-arcs h1 {
+    font-size: 15px;
+    font-family: "Kanit", sans-serif;
+    font-weight: bold;
+    margin-top: -1px;
+    color: #191B30;
+}
+
+.character-character-arcs:hover {
+    border-color: #F47D4B;
+}
+
+.character-add-character-arc {
+    position: absolute;
+    background-color: #191B30;
+    border: none;
+    align-items: center;
+    padding: 3px;
+    border-radius: 5px;
+    border: 2px solid #191B30;
+    top: 3%;
+    left: 86%;
+    transform: translateX(-50%);
+    height: 30px;
+}
+
+.character-character-arcs .character-plus-icon {
+    width: 20px;
+    height: 20px;
+    background: #191B30;
+    border: 10px;
+}
+
+.character-character-arcs .character-trait-item {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border: 2px solid #191B30;
+    border-radius: 5px;
+    position: relative;
+}
+
+.character-character-arcs .character-vert-icon {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.character-character-arcs .character-trait-name-input,
+.character-character-arcs .character-trait-description-textarea {
+    font-family: "Kanit", sans-serif;
+    font-size: 14px;
+    margin: 5px 0;
+    padding: 1px;
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    resize: none;
+}
+
+.character-character-arcs .character-trait-description-textarea {
+    height: 17px;
+}
+
+.character-character-arcs .character-trait-name-input:focus,
+.character-character-arcs .character-trait-description-textarea:focus {
+    outline: none;
+}
+
+.character-character-arcs::-webkit-scrollbar {
+    width: 5px;
+}
+
+.character-character-arcs::-webkit-scrollbar-track {
+    background-color: #191B30;
+    border-radius: 4px;
+}
+
+.character-character-arcs::-webkit-scrollbar-thumb {
+    background-color: #F47D4B;
+    border-radius: 4px;
+}
+
+.character-relationships {
+    position: relative;
+    width: 290px;
+    height: 140px;
+    background-color: white;
+    border-radius: 5px;
+    overflow: auto;
+    border: 2px solid #191B30;
+    padding: 10px;
+    resize: both;
+    min-width: 290px;
+    min-height: 140px;
+    box-sizing: border-box;
+}
+
+.character-relationships h1 {
+    font-size: 15px;
+    font-family: "Kanit", sans-serif;
+    font-weight: bold;
+    margin-top: -1px;
+    color: #191B30;
+}
+
+.character-relationships:hover {
+    border-color: #F47D4B;
+}
+
+.character-add-relationship {
+    position: absolute;
+    background-color: #191B30;
+    border: none;
+    align-items: center;
+    padding: 3px;
+    height: 30px;
+    border-radius: 5px;
+    border: 2px solid #191B30;
+    top: 3%;
+    left: 85%;
+    transform: translateX(-50%);
+}
+
+.character-relationships .character-plus-icon {
+    width: 20px;
+    height: 20px;
+    background: #191B30;
+    border: 10px;
+}
+
+.character-relationships .character-trait-item {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border: 2px solid #191B30;
+    border-radius: 5px;
+    position: relative;
+}
+
+.character-relationships .character-vert-icon {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.character-relationships .character-trait-name-input,
+.character-relationships .character-trait-description-textarea {
+    font-family: "Kanit", sans-serif;
+    font-size: 14px;
+    margin: 5px 0;
+    padding: 1px;
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    resize: none;
+}
+
+.character-relationships .character-trait-description-textarea {
+    height: 17px;
+}
+
+.character-relationships .character-trait-name-input:focus,
+.character-relationships .character-trait-description-textarea:focus {
+    outline: none;
+}
+
+.character-relationships::-webkit-scrollbar {
+    width: 5px;
+}
+
+.character-relationships::-webkit-scrollbar-track {
+    background-color: #191B30;
+    border-radius: 4px;
+}
+
+.character-relationships::-webkit-scrollbar-thumb {
+    background-color: #F47D4B;
+    border-radius: 4px;
+}
+
+.character-skills {
+    position: relative;
+    width: 290px;
+    height: 140px;
+    background-color: white;
+    border-radius: 5px;
+    overflow: auto;
+    border: 2px solid #191B30;
+    padding: 10px;
+    resize: both;
+    min-width: 290px;
+    min-height: 140px;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+}
+
+.character-skills h1 {
+    font-size: 15px;
+    font-family: "Kanit", sans-serif;
+    font-weight: bold;
+    margin-top: -1px;
+    color: #191B30;
+}
+
+.character-skills:hover {
+    border-color: #F47D4B;
+}
+
+.character-add-skill {
+    position: absolute;
+    background-color: #191B30;
+    border: none;
+    align-items: center;
+    padding: 3px;
+    height: 30px;
+    border-radius: 5px;
+    border: 2px solid #191B30;
+    top: 3%;
+    left: 84%;
+    transform: translateX(-50%);
+}
+
+.character-skills .character-plus-icon {
+    width: 20px;
+    height: 20px;
+    background: #191B30;
+    border: 10px;
+}
+
+.character-skills .character-trait-item {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border: 2px solid #191B30;
+    border-radius: 5px;
+    position: relative;
+}
+
+.character-skills .character-vert-icon {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.character-skills .character-trait-name-input,
+.character-skills .character-trait-description-textarea {
+    font-family: "Kanit", sans-serif;
+    font-size: 14px;
+    margin: 5px 0;
+    padding: 1px;
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    resize: none;
+}
+
+.character-skills .character-trait-description-textarea {
+    height: 17px;
+}
+
+.character-skills .character-trait-name-input:focus,
+.character-skills .character-trait-description-textarea:focus {
+    outline: none;
+}
+
+.character-skills::-webkit-scrollbar {
+    width: 5px;
+}
+
+.character-skills::-webkit-scrollbar-track {
+    background-color: #191B30;
+    border-radius: 4px;
+}
+
+.character-skills::-webkit-scrollbar-thumb {
+    background-color: #F47D4B;
+    border-radius: 4px;
+}
+
+.character-weaknesses {
+    position: relative;
+    width: 290px;
+    height: 140px;
+    background-color: white;
+    border-radius: 5px;
+   
+    overflow-y: auto;
+    border: 2px solid #191B30;
+    padding: 10px;
+    resize: both;
+    min-width: 290px;
+    min-height: 140px;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+}
+
+.character-weaknesses h1 {
+    font-size: 15px;
+    font-family: "Kanit", sans-serif;
+    font-weight: bold;
+    margin-top: -1px;
+    color: #191B30;
+}
+
+.character-add-weakness {
+    position: absolute;
+    background-color: #191B30;
+    border: none;
+    align-items: center;
+    padding: 3px;
+    height: 30px;
+    border-radius: 5px;
+    border: 2px solid #191B30;
+    top: 3%;
+    left: 85%;
+    transform: translateX(-50%);
+}
+
+.character-weaknesses:hover {
+    border-color: #F47D4B;
+}
+
+.character-weaknesses .character-plus-icon {
+    width: 20px;
+    height: 20px;
+    background: #191B30;
+    border: 10px;
+}
+
+.character-weaknesses .character-trait-item {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border: 2px solid #191B30;
+    border-radius: 5px;
+    position: relative;
+}
+
+.character-weaknesses .character-vert-icon {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.character-weaknesses .character-trait-name-input,
+.character-weaknesses .character-trait-description-textarea {
+    font-family: "Kanit", sans-serif;
+    font-size: 14px;
+    margin: 5px 0;
+    padding: 1px;
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    resize: none;
+}
+
+.character-weaknesses .character-trait-description-textarea {
+    height: 17px;
+}
+
+.character-weaknesses .character-trait-name-input:focus,
+.character-weaknesses .character-trait-description-textarea:focus {
+    outline: none;
+}
+
+.character-weaknesses::-webkit-scrollbar {
+    width: 5px;
+}
+
+.character-weaknesses::-webkit-scrollbar-track {
+    background-color: #191B30;
+    border-radius: 4px;
+}
+
+.character-weaknesses::-webkit-scrollbar-thumb {
+    background-color: #F47D4B;
+    border-radius: 4px;
+}
+
+.character-roles {
+    position: relative;
+    width: 290px;
+    height: 140px;
+    background-color: white;
+    border-radius: 5px;
+    overflow-y: auto;
+    border: 2px solid #191B30;
+    padding: 10px;
+    resize: both;
+    min-width: 290px;
+    min-height: 140px;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+}
+
+.character-roles h1 {
+    font-size: 15px;
+    font-family: "Kanit", sans-serif;
+    font-weight: bold;
+    margin-top: -1px;
+    color: #191B30;
+}
+
+.character-add-role {
+    position: absolute;
+    background-color: #191B30;
+    border: none;
+    align-items: center;
+    padding: 3px;
+    height: 30px;
+    border-radius: 5px;
+    border: 2px solid #191B30;
+    top: 3%;
+    left: 80%;
+    transform: translateX(-50%);
+}
+
+.character-roles:hover {
+    border-color: #F47D4B;
+}
+
+.character-role-icon {
+    width: 20px;
+    height: 20px;
+    background: #191B30;
+}
+
+.character-roles .character-trait-item {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border: 2px solid #191B30;
+    border-radius: 5px;
+    position: relative;
+}
+
+.character-roles .character-vert-icon {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.character-roles .character-trait-name-input,
+.character-roles .character-trait-description-textarea {
+    font-family: "Kanit", sans-serif;
+    font-size: 14px;
+    margin: 5px 0;
+    padding: 1px;
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    resize: none;
+}
+
+.character-roles .character-trait-description-textarea {
+    height: 17px;
+}
+
+.character-roles .character-trait-name-input:focus,
+.character-roles .character-trait-description-textarea:focus {
+    outline: none;
+}
+
+.character-roles::-webkit-scrollbar {
+    width: 5px;
+}
+
+.character-roles::-webkit-scrollbar-track {
+    background-color: #191B30;
+    border-radius: 4px;
+}
+
+.character-roles::-webkit-scrollbar-thumb {
+    background-color: #F47D4B;
+    border-radius: 4px;
+}
+
+
+
+
+.kanit-thin {
+    font-family: "Kanit", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.kanit-extralight {
+    font-family: "Kanit", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
+.kanit-light {
+    font-family: "Kanit-light", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.kanit-regular {
+    font-family: "Kanit", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.kanit-medium {
+    font-family: "Kanit", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.kanit-semibold {
+    font-family: "Kanit", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.kanit-bold {
+    font-family: "Kanit", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.kanit-extrabold {
+    font-family: "Kanit", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.kanit-black {
+    font-family: "Kanit", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+.kanit-thin-italic {
+    font-family: "Kanit", sans-serif;
+    font-weight: 100;
+    font-style: italic;
+}
+
+.kanit-extralight-italic {
+    font-family: "Kanit", sans-serif;
+    font-weight: 200;
+    font-style: italic;
+}
+
+.kanit-light-italic {
+    font-family: "Kanit", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.kanit-regular-italic {
+    font-family: "Kanit", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.kanit-medium-italic {
+    font-family: "Kanit", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.kanit-semibold-italic {
+    font-family: "Kanit", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.kanit-bold-italic {
+    font-family: "Kanit", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.kanit-extrabold-italic {
+    font-family: "Kanit", sans-serif;
+    font-weight: 800;
+    font-style: italic;
+}
+
+.kanit-black-italic {
+    font-family: "Kanit", sans-serif;
+    font-weight: 900;
+    font-style: italic;
+}

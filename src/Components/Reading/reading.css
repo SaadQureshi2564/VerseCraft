@@ -1,0 +1,854 @@
+
+
+
+.reading-container{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  background: white;
+  overflow: hidden;
+}
+
+.readingProject-dashboard {
+
+  background-color: #f9f9f9;
+  color: #333;
+  font-family: Arial, sans-serif;
+  margin-top: 10px;
+  height: fit-content;
+  max-height: 660px;
+  border-top: 1px solid black;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+/*The progress bar */
+.reading-dashboard-progressbar {
+  width: 100%;
+  height: 15px;
+  background-color: white;
+  overflow: hidden;
+  border-bottom:  1px solid rgb(146, 144, 144);
+
+}
+
+.reading-progressbar-container {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  justify-content: center;
+}
+
+.reading-progressbar {
+  height: 100%;
+  background-color: orange;
+  transition: width 0.2s ease-in-out;
+}
+.reading-progressbar-text {
+  text-align: center;
+  margin-left: 10px;
+  transform: translate(-50%, -50%);
+  font-size: 15px;
+  color: black;
+  text-align: center;
+  pointer-events: none;
+}
+
+.dark-mode .reading-dashboard-progressbar{
+  background-color: #000000;
+  color:white;
+  border-bottom:1px solid white
+}
+
+.dark-mode .reading-progressbar-text{
+  color:white;
+}
+
+
+/*The left column containg the toolbar and chapter and character list */
+
+.reading-left-column{
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  height:100vh;
+  background-color: white;
+  border-right: 1px solid rgb(146, 144, 144);
+  align-items: center;
+}
+
+.reading-toolbar-options{
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap:0%;
+  height: 10%;
+  padding:0.3%;
+  width: auto;
+  z-index: 1;
+  border-bottom: 1px solid rgb(146, 144, 144);
+  width: 100%;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+
+.reading-toolbar-option {
+  
+  color: black;
+}
+
+.dark-mode .reading-toolbar-option {
+  color:white;
+}
+
+.reading-darkmode-toggle {
+  margin-right: 10px;
+}
+
+.reading-font-size-select {
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  margin-left: 5px;
+}
+
+.reading-project-chapter-outline-container{
+  width: 100%;
+  height:37%;
+  max-height: 37%;
+  background-color: white;
+ 
+  border-bottom: 1px solid rgb(146, 144, 144);
+  overflow-x: hidden;
+  z-index: 20s;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.reading-project-chapter-outline-heading{
+  font-family: monospace;
+  font-size: 25px;
+  color: white;
+  background-color: black;
+  font-weight: bold;
+}
+
+.reading-project-chapter-outline-list {
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  
+  /* Custom scrollbar */
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #daa520 #f0f0f0; /* Gold thumb, light gray track */
+}
+
+/* Scrollbar styles for Chrome, Edge, and Safari */
+.reading-project-chapter-outline-list::-webkit-scrollbar {
+  width: 8px; /* Scrollbar width */
+}
+
+.reading-project-chapter-outline-list::-webkit-scrollbar-track {
+  background: #f0f0f0; /* Track color */
+  border-radius: 10px;
+}
+
+.reading-project-chapter-outline-list::-webkit-scrollbar-thumb {
+  background: #daa520; /* Gold scrollbar */
+  border-radius: 10px;
+  border: 2px solid #f0f0f0; /* Padding around thumb */
+}
+
+.reading-project-chapter-outline-list::-webkit-scrollbar-thumb:hover {
+  background: #b8860b; /* Darker gold on hover */
+}
+
+
+.reading-project-chapter-outline-item {
+  padding: 5px;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+  background-color: white;
+  
+  border-radius: 5px;
+  font-size: 1em;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smooth transition */
+}
+
+/* Hover Effect */
+.reading-project-chapter-outline-item:hover {
+  background-color: #f5f5f5;
+  transform: scale(1.03);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Active (Click) Effect */
+.reading-project-chapter-outline-item:active {
+  transform: scale(0.98);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.08);
+}
+
+
+.reading-character-container{
+  width: 100%;
+  height: 30%;
+  max-height: 30%;
+  background-color: white;
+  max-height: 66%;
+  
+  border-bottom: 1px solid rgb(146, 144, 144);
+  overflow: hidden;
+  overflow-y: auto;
+  z-index: 20s;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.reading-character-heading{
+  font-family: monospace;
+  font-size: 25px;
+  font-weight: bold;
+  background-color: black;
+  color: white;
+}
+
+.reading-character-list {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  overflow-y: auto;
+ 
+  /* Custom scrollbar */
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #daa520 #f0f0f0; /* Gold thumb, light gray track */
+}
+
+/* Scrollbar styles for Chrome, Edge, and Safari */
+.reading-character-list::-webkit-scrollbar {
+  width: 8px; /* Scrollbar width */
+}
+
+.reading-character-list::-webkit-scrollbar-track {
+  background: #f0f0f0; /* Track color */
+  border-radius: 10px;
+}
+
+.reading-character-list::-webkit-scrollbar-thumb {
+  background: #daa520; /* Gold scrollbar */
+  border-radius: 10px;
+  border: 2px solid #f0f0f0; /* Padding around thumb */
+}
+
+.reading-character-list::-webkit-scrollbar-thumb:hover {
+  background: #b8860b; /* Darker gold on hover */
+}
+
+.reading-character-item {
+  padding: 5px;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+  background-color: white;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smooth transition */
+  border-radius: 5px;
+  font-size: 1em;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+}
+
+/* Hover Effect */
+.reading-character-item:hover {
+  background-color: #f5f5f5;
+  transform: scale(1.02);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Active (Click) Effect */
+.reading-character-item:active {
+  transform: scale(0.98);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.08);
+}
+
+
+.reading-character-name{
+  font-size: 17px;
+  text-align: center;
+}
+
+.reading-character-description{
+  font-size: 15px;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.modal-character-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 10px 0;
+}
+
+
+
+.dark-mode .read-story-header{
+  background-color: #000000;
+  color:white;
+}
+
+.dark-mode .read-story-header nav ul li{
+  color: white;
+}
+
+.dark-mode .read-story-profile-name {
+  color: white;
+}
+
+.dark-mode .readingProject-dashboard{
+  background-color: #000000;
+  color:white;
+}
+
+.dark-mode .reading-toolbar-options{
+  background-color: rgb(41, 41, 41);
+  border: 1px solid white;
+}
+
+
+.dark-mode .readingProject-chapter-container {
+  background-color: rgb(42, 42, 42);
+  border: 1px solid white;
+}
+
+.dark-mode .readingProject-chapter-title {
+  color: #fff;
+}
+
+.dark-mode .readingProject-chapter-content {
+  color: #ccc;
+}
+
+.dark-mode .reading-project-chapter-outline-container {
+  border-color: white;
+  color:white;
+}
+
+.dark-mode .readingProject-evaluation-Rating h2 ,.readingProject-evaluation-Comments h2{
+   color:black;
+}
+
+
+.reading-center-column{
+  
+  width:60%;
+  overflow: hidden;
+  z-index: 1;
+  background-color: white;
+  border-right: 1px solid rgb(146, 144, 144);
+}
+
+
+.readingProject-heading {
+    text-align: center;
+    margin-top: 5px;
+}
+
+
+
+.readingProject-chapter-container {
+  width: 100%;
+  max-width: 95%;
+  background: #fff;
+  padding: 20px;
+  overflow-y: auto;
+  height:34%;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  /* Custom scrollbar */
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: #999 #f1f1f1; /* Thumb and track color */
+}
+
+/* Webkit-based browsers (Chrome, Edge, Safari) */
+.readingProject-chapter-container::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+.readingProject-chapter-container::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Track color */
+  border-radius: 8px;
+}
+
+.readingProject-chapter-container::-webkit-scrollbar-thumb {
+  background: #999; /* Scrollbar thumb color */
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.readingProject-chapter-container::-webkit-scrollbar-thumb:hover {
+  background: #777; /* Darker color on hover */
+}
+
+
+
+.readingProject-chapter {
+    margin-bottom: 20px;
+
+}
+
+.readingProject-chapter-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.readingProject-chapter-content {
+  line-height: 1.6;
+  height: 100%;
+  font-size: 1em;
+  color: #555;
+  white-space: pre-wrap;
+  text-align: justify;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+
+.readingProject-error {
+    color: red;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.readingProject-evaluation{
+  background-color: white;
+  overflow: hidden;
+}
+
+
+.reading-right-column{
+ 
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  
+  
+}
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:700);
+html
+
+#holder{
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  background: white;
+  padding: 10px;
+  width: 250px;
+  margin: 0 auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-65%);
+  box-shadow: 0px 3px 8px rgba(0,0,0,0.25);
+  border-radius: 2px;
+}
+.add-to-favorites {
+  background: #FFFFFF;
+  margin : 10px auto;
+
+}
+
+.btnTwo {
+  position : relative;
+  width : 200px;
+  height : 100px;
+  margin-top: -100px;
+  padding-top: 2px;
+  background : #2c47f7;
+  left : -250px;
+  transition : .3s;
+}
+.btnText {
+  color : white;
+  transition : .3s;
+}
+.btnText2 {
+  margin-top : 63px;
+  margin-right : -130px;
+  color : #FFF;
+}
+.add-to-favorites:hover .btnTwo{ /*When hovering over .add-to-favorites change .btnTwo*/
+  left: -130px;
+}
+.add-to-favorites:hover .btnText{ /*When hovering over .add-to-favorites change .btnText*/
+  margin-left : 65px;
+}
+.add-to-favorites:hover:active { /*Clicked and held*/
+  box-shadow: 0px 5px 6px rgba(0,0,0,0.3);
+}
+
+.download-button-wrapper {
+  /* Ensures styles apply only inside this wrapper */
+}
+
+.download-button-wrapper .download-button {
+  --background: black;
+  --background-hover: #f19710;
+  --text: #fff;
+  --icon: #fff;
+  display: flex;
+  outline: none;
+  cursor: pointer;
+  border: 0;
+  width: 100%;
+  padding: 8px 20px 8px 12px;
+  border-radius: 9px;
+  line-height: 24px;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text);
+  margin-top: 3%;
+  background: var(--b, var(--background));
+  transition: transform 0.3s, background 0.4s;
+  transform: scale(var(--scale, 1)) translateZ(0);
+}
+
+.download-button-wrapper .download-button:active {
+  --scale: 0.95;
+}
+
+.download-button-wrapper .download-button:hover {
+  --b: var(--background-hover);
+}
+
+.download-button-wrapper .download-button .icon {
+  --arrow-y: 0;
+  --arrow-rotate: 45;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 8px;
+  pointer-events: none;
+}
+
+.download-button-wrapper .download-button .icon .arrow,
+.download-button-wrapper .download-button .icon .line {
+  position: absolute;
+}
+
+.download-button-wrapper .download-button .icon .arrow {
+  left: 11px;
+  top: 4px;
+  width: 2px;
+  height: 12px;
+  border-radius: 1px;
+  background: var(--icon);
+  transform: translateY(calc(var(--arrow-y) * 1px)) translateZ(0);
+}
+
+.download-button-wrapper .download-button .icon .arrow:before,
+.download-button-wrapper .download-button .icon .arrow:after {
+  content: '';
+  width: 2px;
+  height: 7px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 1px;
+  background: inherit;
+  transform-origin: 1px 1px;
+  transform: rotate(var(--r, calc(var(--arrow-rotate) * -1deg)));
+}
+
+.download-button-wrapper .download-button .icon .arrow:after {
+  --r: calc(var(--arrow-rotate) * 1deg);
+}
+
+.download-button-wrapper .download-button .icon .line {
+  width: 24px;
+  height: 24px;
+  display: block;
+  left: 0;
+  top: 7px;
+  fill: none;
+  stroke: var(--icon);
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+
+.add-to-favorites {
+  transition: all 0.3s ease-in-out;
+}
+
+.add-to-favorites button {
+  transition: transform 0.2s ease;
+}
+
+.add-to-favorites button:hover {
+  transform: scale(1.05);
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.MuiSvgIcon-root {
+  transition: color 0.3s ease;
+}
+
+
+
+.reading-comment-sentiment-button:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+
+}
+
+.sentiment-analysis-span {
+  position: absolute;
+  left: 25px;  /* Adjusted for better spacing */
+  top: 50%;  /* Center vertically */
+  transform: translateY(-50%);  /* Ensures proper centering */
+  background-color: rgba(0, 0, 0, 0.7);  /* Adds a tooltip-like background */
+  color: white;  
+  padding: 5px 8px;  
+  border-radius: 4px;  
+  font-size: 10px;  
+  white-space: nowrap;  /* Prevents text wrapping */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 10; /* Ensures it's above other elements */
+}
+
+.reading-comment-sentiment-button {
+  position: relative;  /* Ensures the absolute span is positioned inside this */
+  display: flex;
+  align-items: center;
+}
+
+.reading-comment-sentiment-button:hover .sentiment-analysis-span {
+  opacity: 1;
+}
+
+
+
+.sentiment-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.sentiment-modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.sentiment-close-button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.sentiment-close-button:hover {
+  background-color: #d32f2f;
+}
+
+
+
+/* Read Character Card Styling */
+.Read_character_card-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.Read_character_card-modal-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.Read_character_card-close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #666;
+}
+
+.Read_character_card-modal-header {
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 1rem;
+}
+
+.Read_character_card-modal-header h2 {
+  margin: 0;
+  color: #333;
+}
+
+.Read_character_card-basic-info {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.Read_character_card-modal-body {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+}
+
+.Read_character_card-image-section {
+  max-width: 300px;
+}
+
+.Read_character_card-character-image {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.Read_character_card-details-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.Read_character_card-section {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 6px;
+  border-left: 4px solid #007bff;
+}
+
+.Read_character_card-section h3 {
+  margin: 0 0 1rem 0;
+  color: #2c3e50;
+  font-size: 1.1rem;
+}
+
+.Read_character_card-traits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.Read_character_card-trait-card {
+  background: white;
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.Read_character_card-trait-name {
+  font-weight: 600;
+  color: #007bff;
+  margin-bottom: 0.5rem;
+}
+
+.Read_character_card-trait-description {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .Read_character_card-modal-content {
+    width: 90%;
+    padding: 1rem;
+  }
+
+  .Read_character_card-modal-body {
+    grid-template-columns: 1fr;
+  }
+
+  .Read_character_card-image-section {
+    max-width: 100%;
+  }
+}

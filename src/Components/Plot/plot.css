@@ -1,0 +1,954 @@
+.plot-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  margin-left:-2px;
+  background: radial-gradient(circle, rgb(247, 188, 79), rgb(0, 204, 255));
+
+ 
+}
+
+
+
+/* Sidebar */
+.plot-sidebar {
+position: fixed; /* Sidebar should be fixed so that it can overlap other content */
+top: 12.7%;
+margin-left: 20px;
+height: 82.5%;
+width: 2.4%; /* Collapsed width */
+background:white;
+padding: 10px;
+z-index: 10;
+transition: width 0.3s ease; /* Smooth transition for opening/closing */
+overflow: hidden; /* Hide overflowing content when collapsed */
+margin-top: 50px;
+color: rgb(237, 230, 217);
+font-size: 20px;
+font-family: sans-serif;
+margin-top: -9px;
+border-radius: 20px;
+box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* X, Y, Blur, Colour */
+
+}
+
+
+/*Sidepanel*/
+
+.plot-sidepanel{
+  position: absolute;
+  width: 15%;
+  height: 85.7%;
+  margin-top: 85px;
+  background-color:white;
+  margin-left:100px;
+  overflow-wrap: break-word; /* Break long words */
+  word-wrap: break-word; /* Ensure long words wrap to the next line */
+  white-space: normal; /* Allow text to wrap to the next line */
+  overflow: hidden; /* Hide any overflow content */
+  display:flex;
+  align-items: center;
+  flex-direction: column;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-right: 1px solid black;
+
+
+}
+
+
+
+.main-plots {
+  width: 100%;
+  height: 250px;
+  overflow-y: auto; /* Allows vertical scrolling */
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  position: relative; /* Ensures absolute positioning works for sticky elements */
+  
+}
+
+.main-plots::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
+}
+
+.main-plots {
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+  scrollbar-width: none; /* For Firefox */
+}
+
+.plot-left-sidepanel-header{
+  font-size: 25px;
+  font-weight: bold;
+  font-family: monospace;
+  color: black;
+  margin: 0; /* Removes any default margin */
+  padding: 10px; /* Adds padding for better spacing */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow below */
+  position: sticky; /* Makes the header sticky */
+  z-index: 7; /* Ensures the header is above the scrollable content */
+  
+
+}
+
+
+.main-plots h2 {
+  font-size: 25px;
+  font-weight: bold;
+  font-family: monospace;
+  color: black;
+  margin: 0; /* Removes any default margin */
+  
+}
+
+
+.add-plot-container {
+display: flex;
+flex-direction: column;
+align-items: center;
+position: relative;
+}
+
+.add-plot-text {
+position: fixed;
+font-size: 15px;
+font-family: monospace;
+font-weight: 400;
+margin-bottom: 5px;
+opacity: 0;
+transition: opacity 0.3s ease;
+color: white;
+font-weight: bold;
+margin-left: 8%;
+background-color: #191B30;
+padding:4px;
+border-radius: 5px;
+z-index: 10;
+border: 1px solid white;
+
+
+}
+
+.add-plot-container:hover .add-plot-text {
+opacity: 1; /* Shows the text when hovering */
+}
+
+.main-plus-icon {
+
+background-color: white;
+border-radius: 3px;
+z-index: 9;
+cursor: pointer;
+transition: transform 0.3s ease;
+}
+
+
+.add-plot-container:hover .main-plus-icon {
+transform: scale(1.2); /* Enlarges the icon on hover */
+}
+
+.main-plus-icon:hover{
+  color: #a2e6f2;
+}
+
+
+.add-main-plot {
+  margin-top: 1%;
+  height: 150px;
+  width: 13.5%;
+  z-index: 8;
+  overflow-y: auto; /* Enable vertical scrolling within this container */
+  padding: 10px; /* Optional: Adds padding around the entire container */
+  position: fixed;
+}
+
+/* Hide the scrollbar in WebKit browsers (Chrome, Safari) */
+.add-main-plot::-webkit-scrollbar {
+display: none; /* Hides the scrollbar */
+}
+
+/* Hide the scrollbar in Firefox */
+.add-main-plot {
+scrollbar-width: none; /* Hides scrollbar */
+}
+
+.main-plot-item{
+margin-bottom: -15%;
+padding: 10px;
+width: fit-content;
+
+}
+
+
+/* Hide the scrollbar in WebKit browsers (Chrome, Safari) */
+.main-plot-item::-webkit-scrollbar {
+display: none; /* Hides the scrollbar */
+}
+
+/* Hide the scrollbar in Firefox */
+.main-plot-item {
+scrollbar-width: none; /* Hides scrollbar */
+}
+
+
+
+.main-plot-item:last-child{
+margin-bottom: 30px;
+}
+
+.main-plot-input {
+font-family:sans-serif; /* Font style */
+width: 90%; /* Full width minus padding */
+border: none;
+outline: none; /* Remove outline */
+font-size: 17px; /* Font size */
+text-align: left; /* Left align text */
+display: block; /* Block display */
+margin-top: -5px; /* Space above the input */
+padding: 7px; /* Padding for better spacing */
+padding-left: 15px; /* Additional left padding for text */
+border-radius: 2px; /* Rounded corners for modern look */
+transition: all 0.25s ease-in-out; /* Smooth transition for all properties */
+background-color:#faf0e2; /* Background color */
+white-space: nowrap; /* Prevents text from wrapping to the next line */
+text-overflow: ellipsis; /* Adds ellipsis (...) for overflowing text */
+z-index: 1;
+}
+
+.main-plot-input:hover{
+color: #be822d;
+}
+
+.plot-input-options-container{
+  background-color:#faf0e2;
+  justify-self: end;
+  align-items: center;
+  justify-content: center;
+  height: 25px;
+  width: fit-content;
+  margin-right: -4px;
+  margin-top: 13.5px;
+
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  cursor: pointer;
+
+}
+
+.plot-input-options-container:hover{
+  cursor: pointer;
+}
+
+
+
+
+.dropdown-main {
+position: absolute;
+background-image: url('../Images/Dropdown.png'); /* Replace with the actual path to your image */
+background-size: cover; /* Ensures the image covers the button */
+background-position: center; /* Centers the image in the button */
+background-color: transparent;
+background-repeat: no-repeat; /* Prevents the image from repeating */
+width: 20px; /* Set button width */
+height: 20px; /* Set button height */
+border: none; /* Remove border if needed */
+cursor: pointer; /* Make it look clickable */
+margin-left: 65px; /* Adjust the left margin as needed */
+margin-top: -26px;
+z-index: 4;
+background-color: #faf0e2;
+padding-right:10px;
+padding-left: 5px;
+transition: transform 0.3s ease; /* Smooth transition for rotation */
+transform: rotate(0deg);
+}
+
+.dropdown-main.rotated {
+transform: rotate(180deg); /* Rotate by 180 degrees */
+}
+
+.dropdown-main:hover + .main-plot-input {
+background-color: #f5f5f5; /* Light background on hover */
+box-shadow: 
+    0 -5px 5px rgba(0, 0, 0, 0.2), /* Larger shadow on top */
+    0 10px 15px rgba(0, 0, 0, 0.2),  /* Standard shadow below */
+    0 5px 10px rgba(0, 0, 0, 0.2);   /* Softer shadow closer to the input */
+transform: translateY(-3px); /* Slight lift effect */
+}
+
+.dropdown-main:hover{
+background-color: #ece2d1;
+border-radius: 100%;
+padding:2px;
+}
+
+
+
+
+.MuiIconButton-root:hover {
+  background-color: transparent;
+}
+
+.modal {
+  position: relative;
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it appears above other content */
+}
+
+
+
+.modal-content {
+  padding: 7px; /* Increased padding */
+  border-radius: 2px; /* More rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Deeper shadow */
+  text-align: center;
+  width: fit-content; /* Fixed width for the modal */
+  animation: fadeIn 0.5s; /* Animation on opening */
+  display: flex;
+  margin-left: 330px;
+  margin-top: 170px;
+  flex-direction:column ;
+}
+
+
+.modal-content p {
+  margin-bottom: 25px; /* Increased margin */
+  color: #555; /* Slightly lighter text color */
+}
+
+.modal-content button {
+  padding: 5px; /* More padding for buttons */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #7c8199ff;
+  font-size: 16px; /* Larger font size */
+  transition: background-color 0.3s; /* Smooth transition */
+  font-size: 13px;
+  text-transform: lowercase;
+  width: 100px;
+  
+}
+
+
+.modal-content button:hover {
+  background-color: #f0f2f5ff; /* Change background on hover */
+  color:#191B30;
+}
+
+
+.sub-modal-content {
+  padding: 7px; /* Increased padding */
+  border-radius: 2px; /* More rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Deeper shadow */
+  text-align: center;
+  width: fit-content; /* Fixed width for the modal */
+  animation: fadeIn 0.5s; /* Animation on opening */
+  display: flex;
+  margin-left: 330px;
+  margin-top: 220px;
+  flex-direction:column ;
+}
+
+
+
+.sub-modal-content button {
+  padding: 5px; /* More padding for buttons */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #7c8199ff;
+  font-size: 16px; /* Larger font size */
+  transition: background-color 0.3s; /* Smooth transition */
+  font-size: 13px;
+  text-transform: lowercase;
+  width: 100px;
+  
+}
+
+
+.sub-modal-content button:hover {
+  background-color: #f0f2f5ff; /* Change background on hover */
+  color:#191B30;
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+
+.add-main-plot .sections{
+  margin-top: 5px;
+}
+
+
+.plot-chapter-list{
+  border-top: 2px solid black;
+  z-index: 8;
+}
+
+.plot-save-button-css{
+  position: absolute;
+  background-color: #191B30;
+  color: white;
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  top: 620px;
+  left:1400px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid black;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+.plot-save-button-css:hover{
+  background-color: white;
+  color: black;
+  transition: transform 0.3s ease;
+}
+
+.main-plot-section-input{
+  font-family: 'Times New Roman', Times, serif; /* Font style */
+  width: 70%; /* Full width minus padding */
+  border: none;
+  outline: none; /* Remove outline */
+  font-size: 14px; /* Font size */
+  text-align: left; /* Left align text */
+  display: block; /* Block display */
+  margin-top: 1px; /* Space above the input */
+  padding: 5px; /* Padding for better spacing */
+  padding-left: 5px; /* Additional left padding for text */
+  border-radius: 5px; /* Rounded corners for modern look */
+  transition: all 0.25s ease-in-out; /* Smooth transition for all properties */
+  background-color: #f0f0f0; /* Background color */
+  white-space: nowrap; /* Prevents text from wrapping to the next line */
+  text-overflow: ellipsis; /* Adds ellipsis (...) for overflowing text */
+  margin-left: 2px;
+}
+
+.main-plot-section-input:hover {
+  background-color: #f5f5f5; /* Light background on hover */
+  box-shadow: 
+      0 -5px 5px rgba(0, 0, 0, 0.2), /* Larger shadow on top */
+      0 10px 15px rgba(0, 0, 0, 0.2),  /* Standard shadow below */
+      0 5px 10px rgba(0, 0, 0, 0.2);   /* Softer shadow closer to the input */
+  transform: translateY(-3px); /* Slight lift effect */
+}
+
+
+
+.dropdown-sub {
+  position: absolute;
+  background-image: url('../Images/Dropdown.png'); /* Replace with the actual path to your image */
+  background-size: cover; /* Ensures the image covers the button */
+  background-position: center; /* Centers the image in the button */
+  background-color: transparent;
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  width: 20px; /* Set button width */
+  height: 20px; /* Set button height */
+  border: none; /* Remove border if needed */
+  cursor: pointer; /* Make it look clickable */
+  margin-left: 63px; /* Adjust the left margin as needed */
+  margin-top: -50px;
+  z-index: 4;
+  transition: transform 0.3s ease; /* Smooth transition for rotation */
+  transform: rotate(0deg); /* Default position */
+}
+
+.dropdown-sub.rotated {
+  transform: rotate(180deg); /* Rotate by 180 degrees */
+}
+
+.add-sub-plot .sections{
+  margin-top: 10px;
+}
+
+.section-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2px; /* Adjust margin as needed */
+}
+
+.section-item input{
+  font-family: sans-serif; /* Font style */
+  width: 70%; /* Full width minus padding */
+  border: none;
+  outline: none; /* Remove outline */
+  font-size: 14px; /* Font size */
+  text-align: left; /* Left align text */
+  display: block; /* Block display */
+  margin-top: 1px; /* Space above the input */
+  margin-bottom:2px;
+  padding: 5px; /* Padding for better spacing */
+  padding-left: 5px; /* Additional left padding for text */
+  border-radius: 5px; /* Rounded corners for modern look */
+  transition: all 0.25s ease-in-out; /* Smooth transition for all properties */
+  background-color: #f0f0f0; /* Background color */
+  white-space: nowrap; /* Prevents text from wrapping to the next line */
+  text-overflow: ellipsis; /* Adds ellipsis (...) for overflowing text */
+  margin-bottom: 20px;
+  
+}
+
+.sub-plot-section-input:hover {
+  background-color: #f5f5f5; /* Light background on hover */
+  box-shadow: 
+      0 -5px 5px rgba(0, 0, 0, 0.2), /* Larger shadow on top */
+      0 10px 15px rgba(0, 0, 0, 0.2),  /* Standard shadow below */
+      0 5px 10px rgba(0, 0, 0, 0.2);   /* Softer shadow closer to the input */
+  transform: translateY(-3px); /* Slight lift effect */
+}
+
+
+.downright-icon {
+  width: 20px;  /* Adjust the size of the icon */
+  height: 20px;
+  margin-left: 20px; /* Adjust spacing between the icon and input */
+  margin-top:-30px
+}
+
+.sub-downright-icon{
+  width: 20px;  /* Adjust the size of the icon */
+  height: 20px;
+  margin-left: 20px; /* Adjust spacing between the icon and input */
+  margin-top: -10px;
+}
+
+
+.modal-overlay {
+  background-color: #f0f0f0; /* Light gray background */
+  padding: 30px; /* Increased padding */
+  border-radius: 10px; /* More rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Deeper shadow */
+  text-align: center;
+  width: 300px; /* Fixed width for the modal */
+  animation: fadeIn 0.3s; /* Animation on opening */
+}
+
+
+.modal-overlay .modal-button {
+  margin: 0 10px; /* Increased space between buttons */
+  padding: 12px 20px; /* More padding for buttons */
+  border: none;
+  border-radius: 5px;
+  background-color: #191B30;
+  margin-right: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  color: white;
+  font-size: 16px; /* Larger font size */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+.modal-overlay .modal-button:hover {
+  background-color: #F47D4B; /* Change background on hover */
+}
+
+
+
+.plot-dashboard {
+  position: relative;
+  margin-top: 0;
+  margin-left: 21.5%;
+  width: 74%;
+  height: 80%;
+  background-color: #faf0e2;
+  overflow-y: auto; /* Enable vertical scrolling */
+  overflow-x: hidden; /* Disable horizontal scrolling for the entire dashboard */
+  padding:20px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-left: 1px solid rgb(164, 136, 117);
+}
+
+.zoom-controls {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+}
+
+.zoom-button {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.zoom-button img {
+  width: 25px;
+  height: 25px;
+}
+
+
+.white-line {
+  width: 100%; /* Make the line span the entire width */
+  margin-left: 0px; /* Add some vertical spacing */
+  height: 4px;
+  margin-top: 270px;
+  background-color: white;
+  z-index: 5;
+}
+
+/* Style for the small box at the start of each main plot line */
+.plot-indicator {
+  width: auto;
+  height: 50px;
+  background-color: white; /* You can change this color */
+  color: black;
+  padding: 5px;
+  border: 3px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  margin-top: 117.5px;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-right: 20px; /* Space between the box and the white line */
+}
+
+.main-plot-visual{
+  overflow:auto;
+}
+
+
+
+.main-plot-visual .overview {
+  margin-left: 0px;
+  margin-top: -150px;
+  display: flex;
+  justify-content: flex-start; /* Align items to the start */
+  flex-direction: row; /* Row direction for horizontal alignment */
+  align-items: flex-start; /* Align items at the top */
+  overflow-x: auto; /* Allow horizontal scrolling */
+  overflow-y: hidden; /* Prevent vertical scrolling */
+  white-space: nowrap; /* Prevent items from wrapping */
+}
+
+.main-plot-visual .overview-item {
+  width: 350px;
+  min-width: 150px; /* Prevent shrinking */
+  max-width: 350px; /* Prevent growing */
+  height: 250px;
+  min-height: 250px; /* Prevent shrinking */
+  max-height: 250px; /* Prevent growing */
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  border: 1px solid black;
+  margin-left: 100px; /* Adjust margin for space between items */
+  flex-shrink: 0; /* Prevent the item from shrinking */
+  flex-grow: 0; /* Prevent the item from growing */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  overflow-y: auto;
+}
+
+/* Hide scrollbar for Chrome, Safari, and newer versions of Edge */
+.main-plot-visual .overview-item::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge, and Firefox */
+.main-plot-visual .overview-item {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+
+.section-summary {
+  margin-top: -10px;
+}
+
+.section-summary h4 {
+  margin-bottom: 5px;
+  font-size: 0.95em;
+  color: #191B30;
+}
+
+.summary-textarea {
+  width: 300px;
+  height: 60px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  font-family: Arial, sans-serif;
+  font-size: 0.9em;
+}
+
+
+.section-characters {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #fefefe;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 282px;
+  margin-left: 20px;
+  height: 180px;
+  
+  
+}
+
+.section-characters h4 {
+  font-size: 15px;
+  font-weight: 300;
+  color: #191B30;
+  margin-bottom: 12px;
+  
+  font-family: sans-serif;
+  margin-bottom: -10px;
+
+}
+
+.section-characters select {
+  width: 100%;
+  height: 100px; /* Set a fixed height to limit the size */
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: white;
+  transition: border-color 0.2s ease;
+  outline: none;
+  overflow-y: auto; /* Allow vertical scrolling */
+  margin-top: 20px;
+  
+}
+
+/* Optional: Customize scrollbar if needed */
+.section-characters select::-webkit-scrollbar {
+  width: 8px;
+}
+
+.section-characters select::-webkit-scrollbar-thumb {
+  background-color: #191B30;
+  border-radius: 4px;
+}
+
+.section-characters select:hover {
+  border-color: #007bff;
+}
+
+.section-characters select:focus {
+  border-color: #0056b3;
+  
+}
+
+
+
+.add-character-section {
+  margin-top: 0px;
+  display: flex;
+  align-items: center;
+}
+
+.add-character-section input {
+  padding: 8px;
+  font-size: 14px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 150px;
+}
+
+.add-character-section button {
+  padding: 8px 12px;
+  background-color: #191B30;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  
+}
+
+.add-character-section button:hover {
+  background-color: #F47D4B;
+}
+
+
+
+
+
+.overview::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
+}
+
+.overview {
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+  scrollbar-width: none; /* For Firefox */
+}
+
+.plot-dashboard::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
+}
+
+.plot-dashboard {
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+  scrollbar-width: none; /* For Firefox */
+}
+
+
+.subplot-line {
+  position: absolute;
+  background-color: white;
+  width: 2px;
+  height: 200px; /* Adjust as necessary */
+  z-index: 5;
+}
+
+
+.custom-menu {
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.custom-menu button {
+  display: block;
+  width: 100%;
+  padding: 5px;
+  margin: 5px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.2s;
+}
+
+.custom-menu button:hover {
+  background-color: #f0f0f0;
+}
+
+
+
+
+.kanit-thin {
+  font-family: "Kanit", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.kanit-extralight {
+  font-family: "Kanit", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.kanit-light {
+  font-family: "Kanit-light", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.kanit-regular {
+  font-family: "Kanit", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.kanit-medium {
+  font-family: "Kanit", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.kanit-semibold {
+  font-family: "Kanit", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.kanit-bold {
+  font-family: "Kanit", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.kanit-extrabold {
+  font-family: "Kanit", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.kanit-black {
+  font-family: "Kanit", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.kanit-thin-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.kanit-extralight-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.kanit-light-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.kanit-regular-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.kanit-medium-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.kanit-semibold-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.kanit-bold-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.kanit-extrabold-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.kanit-black-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+.story-chapter-list{
+overflow: auto;
+}

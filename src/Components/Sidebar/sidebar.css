@@ -1,0 +1,136 @@
+
+    
+    /* Sidebar */
+    .sidebar-sidebar {
+        position: fixed; /* Sidebar should be fixed so that it can overlap other content */
+        top: 14%;
+        margin-left: 20px;
+        height: 80%;
+        width: 2.4%; /* Collapsed width */
+        background:white;
+        padding: 10px;
+        z-index: 10;
+        transition: width 0.3s ease; /* Smooth transition for opening/closing */
+        overflow: hidden; /* Hide overflowing content when collapsed */
+        margin-top: 50px;
+        color: rgb(237, 230, 217);
+        font-size: 20px;
+        font-family: sans-serif;
+        margin-top: -9px;
+        border-radius: 20px;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* X, Y, Blur, Colour */
+        z-index: 4000;
+        }
+        
+        /* Expanded sidebar */
+        .sidebar-sidebar.open {
+        width: 12%; /* Expanded width */
+        }
+        
+        /* Toggle button styling */
+        .sidebar-sidebar-toggle {
+        position: absolute; /* Position the toggle button relative to the sidebar */
+        top: 10px; /* Fixed distance from the top of the sidebar */
+        left: 12px; /* Fixed distance from the left of the sidebar */
+        background: none;
+        border: none;
+        color: black;
+        font-size: 25px;
+        cursor: pointer;
+        }
+        
+        
+        
+        /* Styling for the icons and labels within the sidebar */
+        .sidebar-journal,
+        .sidebar-notifications,
+        .sidebar-goals,
+        .sidebar-favorites,
+        .sidebar-communities,
+        .sidebar-settings {
+        display: flex;
+        align-items: center; /* Vertically center icons and text */
+        margin: 10px 0; /* Space between each item */
+        padding-left: 10px; /* Indentation for better visual spacing */
+        width: 100%; /* Ensures each item takes full width */
+        transition: opacity 0.3s ease; /* Smooth transition for opacity */
+        cursor: pointer;
+        color: black;
+        }
+        
+        /* Maintain fixed width for items when sidebar is collapsed */
+        .sidebar-journal,
+        .sidebar-notifications,
+        .sidebar-goals,
+        .sidebar-favorites,
+        .sidebar-communities,
+        .sidebar-settings {
+        width: calc(100% - 10px); /* Adjust width minus padding */
+        margin-top:20px;
+        margin-left: -10px;
+        padding:10px;
+        font-size: 15px;
+        border-radius: 10px;
+        transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+        
+        }
+        
+        /* Maintain fixed width for items when sidebar is collapsed */
+        .sidebar-journal:hover,
+        .sidebar-notifications:hover,
+        .sidebar-goals:hover,
+        .sidebar-favorites:hover,
+        .sidebar-communities:hover,
+        .sidebar-settings:hover {
+        background-color: #e1e1e1;
+        border-radius: 10px;
+        cursor: pointer;
+        
+        }
+        
+        .sidebar-journal{
+        margin-top: 70px;
+        }
+        
+        
+        
+        /* Icon Styles */
+        .sidebar-journal-icon,
+        .sidebar-noti-icon,
+        .sidebar-goal-icon,
+        .sidebar-fav-icon,
+        .sidebar-comm-icon,
+        .sidebar-set-icon {
+        width: 20px;
+        height: 20px;
+        margin-right: 20px; /* Space between icon and text */
+        cursor: pointer;
+        margin-left: 7px;
+        
+        }
+        
+        
+        /* Adjust the text and labels for expanded state */
+        .sidebar-sidebar.open .sidebar-journal,
+        .sidebar-sidebar.open .sidebar-notifications,
+        .sidebar-sidebar.open .sidebar-goals,
+        .sidebar-sidebar.open .sidebar-favorites,
+        .sidebar-sidebar.open .sidebar-communities,
+        .sidebar-sidebar.open .sidebar-settings {
+        justify-content: flex-start; /* Align items when expanded */
+        cursor: pointer;
+        }
+        
+        /* Label for the icons when the sidebar expands */
+        .sidebar-sidebar.open .sidebar-journal::after,
+        .sidebar-sidebar.open .sidebar-notifications::after,
+        .sidebar-sidebar.open .sidebar-goals::after,
+        .sidebar-sidebar.open .sidebar-favorites::after,
+        .sidebar-sidebar.open .sidebar-communities::after,
+        .sidebar-sidebar.open .sidebar-settings::after {
+        content: attr(data-label);
+        color: #FFF;
+        margin-left: 10px; /* Space between icon and label */
+        font-size: 16px; /* Adjust label font size */
+        }
+        

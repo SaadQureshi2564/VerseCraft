@@ -1,0 +1,337 @@
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background-color:#f6e7d1;
+
+}
+
+
+
+
+
+.profile-header-username{
+text-align: center;
+font-weight: 500;
+}
+
+
+
+.profile-dashboard {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  border-bottom-right-radius: 10px;
+  overflow-y: hidden; /* Use scroll to keep the scrolling functionality */
+  border-radius: 5px;
+  position: relative;
+  overflow-x:hidden ;
+  /* Hide scrollbar for most browsers */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  margin-top: -220px;
+}
+
+
+
+
+.profile-background-image{
+  margin-top: 0px;
+width: 100%;
+  height: 200px;
+  border-top-right-radius: 5px;
+  
+}
+
+.user-background-image{
+  width: 100%;
+  height: 200px;
+  border-top-right-radius: 5px;
+}
+
+
+.profile-user-info-sidepanal{
+
+  background-color: rgb(255, 255, 255);
+  margin:30px;
+  border-radius: 5px;
+  width: fit-content;
+  height: 100vh;
+  padding:10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content:flex-start;
+  border: 1px solid black;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.profile-user-image{
+  width:100px;
+  height: 100px;
+  z-index: 4;
+  border-radius: 100%;
+  background-color: white;
+  border: 2px solid black;
+  margin: 10px;
+  margin-left: 50px;
+}
+
+.user-image{
+  width:100px;
+  height: 100px;
+  border-radius: 100%;
+}
+
+.profile-dashboard::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+
+.profile-bio{
+  width:200px;
+  text-align: start;
+  max-height: 250px;
+  color: #3d3c3c;
+  z-index: 3;
+  border: 1px solid,white;
+  border-radius: 10px;
+  padding:10 10 5 10px;
+  overflow: hidden;
+ 
+}
+
+.profile-bio-description {
+  font-size: 14px;
+  color: black;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* adjust this value to set the number of lines */
+  -webkit-box-orient: vertical;
+  overflow-y: auto;
+
+}
+
+
+.profile-bio-description::-webkit-scrollbar {
+display: none; /* hide scrollbar in Chrome, Safari, and Opera */
+}
+
+
+.profile-interests{
+justify-content: flex-start;
+text-align: start;
+color: #3d3c3c;
+display: flex;
+flex-direction: column;
+height: 70px;
+overflow-y: auto;
+
+}
+
+.profile-interest-items-container{
+display: flex;
+flex-direction: row;
+}
+
+.profile-interest-items{
+
+color: black;
+padding:5px;
+background-color: #c5c3c3;
+margin:5px;
+border-radius: 10px;
+text-align: center;
+
+
+
+}
+
+
+.profile-contact-details{
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+}
+
+
+
+.profile-socials-container{
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+justify-content: flex-start;
+}
+
+/* Specific styles for each social media platform */
+.profile-facebook,
+.profile-instagram,
+.profile-twitter,
+.profile-linkedin {
+width: 40px; /* Width of each social media icon */
+height: 40px; /* Height of each social media icon */
+border-radius: 50%;
+display: flex;
+justify-content: center;
+align-items: center;
+cursor: pointer;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+background-size: 24px; /* Adjust icon size */
+background-position: center;
+background-repeat: no-repeat;
+background-color: #ffffff; /* Background color for the icon */
+border: 3px solid #F47D4B;
+margin-left: 20px;
+margin-top: 10px;
+}
+
+.profile-facebook {
+background-image: url('../Images/facebook-icon.png'); /* Replace with the actual path of the icon */
+}
+
+.profile-instagram {
+background-image: url('../Images/instagram-icon.png'); /* Replace with the actual path of the icon */
+}
+
+.profile-twitter {
+background-image: url('../Images/twitter-icon.png'); /* Replace with the actual path of the icon */
+}
+
+.profile-linkedin {
+background-image: url('../Images/linkedin-icon.png'); /* Replace with the actual path of the icon */
+}
+
+/* Hover effect for social media icons */
+.profile-facebook:hover,
+.profile-instagram:hover,
+.profile-twitter:hover,
+.profile-linkedin:hover {
+transform: scale(1.1);
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+.profile-contact-container {
+width: fit-content;
+
+display: flex;
+flex-direction: row; /* Arranges phone and email side by side */
+gap: 10px; /* Reduced space between the contact items */
+background: #f0f0f0; /* Light grey background for better contrast */
+padding: 5px 10px; /* Reduced padding for a more compact look */
+border-radius: 8px; /* Rounded corners */
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+color: #191B30; /* Dark color for text to contrast with the background */
+font-family: 'Kanit', sans-serif;
+font-size: 14px; /* Reduced font size to match smaller container */
+max-width: 400px; /* Reduced max-width for a smaller container */
+margin: 20px auto; /* Center the container horizontally with some top margin */
+border: 2px solid #F47D4B; /* Reduced border thickness for a more balanced look */
+margin-top: -50px; /* Reduced top margin for better alignment */
+left:600px;
+}
+
+
+.profile-contact-phone, .profile-contact-email {
+display: flex;
+align-items: center; /* Centers icon and text vertically */
+gap: 10px; /* Space between icon and text */
+padding: 10px;
+border-radius: 8px; /* Rounded corners */
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+cursor: pointer;
+color: #191B30; /* Text color to provide a contrast with background */
+}
+
+.profile-contact-phone:hover, .profile-contact-email:hover {
+transform: scale(1.05); /* Grows slightly when hovered over */
+box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Adds depth on hover */
+}
+
+.profile-contact-icon {
+width: 24px; /* Icon size */
+height: 24px;
+background-size: cover;
+background-repeat: no-repeat;
+}
+
+.profile-author-rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #f5c518; /* Golden color to represent rating */
+  margin-top: 10px;
+}
+
+.profile-published-works-container {
+  margin-top: 240px; /* Adjusted top margin for more balanced spacing */
+  background: #191B30;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-wrap: wrap; /* Allow multiple works to be displayed in rows */
+  width: fit-content; /* Container width wraps around the content */
+  height:fit-content;
+  max-width: 1000px;
+  margin-left: 0px;
+  margin-right: auto; /* Center the container */
+  justify-content: space-between; /* Ensure even spacing between items */
+  padding: 10px; /* Add padding to match the margin of the items */
+  box-sizing: border-box; /* Ensure container respects padding in width */
+}
+
+
+.profile-published-work-items {
+  width: calc(25% - 20px); /* Ensures that each item takes up 1/4 of the row, considering the gap */
+  background: #f5f5f5;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box; /* Include padding and border in the element's total width */
+  margin-bottom: 20px; /* Consistent spacing between rows */
+  margin: 0 10px 20px 10px; /* Add equal left and right margin */
+}
+.profile-published-work-items:nth-child(4n) {
+  margin-right: 0; /* Remove right margin for every fourth item to align properly */
+}
+
+.profile-published-work-image {
+  width: 100%;
+  height: 150px;
+  background-color: #ccc; /* Placeholder for image */
+  border-radius: 4px;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 10px;
+}
+
+.profile-published-work-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #191B30;
+  margin-bottom: 5px;
+}
+
+.profile-published-work-summary {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.profile-published-work-rating {
+  font-size: 16px;
+  color: #f47d4b;
+  font-weight: bold;
+}

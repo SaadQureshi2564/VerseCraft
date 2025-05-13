@@ -1,0 +1,189 @@
+
+
+.footer-container {
+    width: 100%;
+    color: white;
+    text-align: center;
+    margin-top: auto; /* Pushes footer to bottom */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-self: last baseline !important;
+    
+    margin-top: 120%;
+
+    
+}
+
+.footer-links{
+    display: flex;
+    flex-direction: row;
+    gap:20%;
+    justify-self: flex-start;
+    padding:2%;
+    background-color: rgb(8, 8, 10);
+  
+    
+}
+
+.footer-about-section{
+    margin-left: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: start;
+    font-weight:700;
+    color: white;
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    
+}
+.footer-about-section p{
+    margin-top: 10%;
+    margin-bottom: 2%;
+    font-weight: 400;
+    font-size:0.9rem;
+    align-self: flex-start;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-about-section p:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+.footer-discover-section{
+    margin-left: 2%;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: start;
+    font-weight:700;
+    color: white;
+    font-size: 18px;
+    
+}
+.footer-discover-section p{
+    margin-top: 10%;
+    margin-bottom: 1%;
+    font-weight: 400;
+    font-size:0.9rem;
+    align-self: flex-start;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-discover-section p:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+.footer-legal-section{
+    margin-left: 2%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    font-weight:700;
+    color: white;
+    font-size: 18px;
+    
+}
+.footer-legal-section p:first-child{
+    margin-top: 5%;
+    margin-bottom: 1%;
+    font-weight: 400;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size:0.9rem;
+    align-self: flex-start;
+}
+
+.footer-legal-section p{
+    margin-top: 5%;
+    margin-bottom: 1%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    font-size:0.9rem;
+    align-self: flex-start;
+}
+
+.footer-legal-section p:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.footer-explore-section{
+    background-color:#121217ff ;
+    
+}
+
+
+.footer-logo-container{
+    background-color: #121217ff;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    border-top: 1px solid white;
+    
+    
+
+}
+
+.footer-logo-image{
+    background-color: none;
+    width: 10%;
+    height: 10%;
+
+}
+
+.footer-logo-text{
+    font-size: 30px;
+    font-weight: 600;
+    margin-left: -3%;
+    margin-top: -1%;
+}
+
+
+.footer-social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-left: 50%;
+    margin-top: -6%;
+}
+
+.social-icon {
+    color: white !important; /* Default color */
+    transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.social-icon:hover {
+    transform: scale(1.2); /* Slight zoom effect */
+}
+
+/* Custom Colors for Each Platform */
+.twitter:hover {
+    color: #e41919 !important;
+}
+
+.facebook:hover {
+    color: #315ef0 !important;
+}
+
+.linkedin:hover {
+    color: #1b9ce1 !important;
+}
+
+.instagram:hover {
+    color: #b80665 !important;
+}
+
+.footer-reserve{
+    margin-left: 50%;
+    align-self: center;
+    text-align: center;
+    margin-top: -1%;
+}

@@ -1,0 +1,841 @@
+.setting-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background: radial-gradient(circle, orange, rgb(0, 187, 255));
+ 
+}
+
+.setting-save-profile{
+  width: 77%;
+  height: fit-content;
+  background-color: white;
+  position: fixed;
+  top:585px;
+  left:270px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: self-start;
+  padding:20px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.save-profile-button{
+  padding: 15px;
+  border-radius: 5px;
+  justify-content: center;
+  align-self: center;
+  background-color: #191B30;
+  color: white;
+
+}
+
+.save-profile-button:hover{
+  cursor: pointer;
+  background-color: #f8a807;
+}
+
+
+.setting-profile-background-image{
+  margin-top: 0px;
+
+}
+
+
+ 
+
+
+.setting-sidepanel{
+
+  width: 14%;
+  height: 100vh;
+  background:white;
+  padding: 5px;
+  margin-top: 0px;
+  overflow-wrap: break-word; /* Break long words */
+  word-wrap: break-word; /* Ensure long words wrap to the next line */
+  white-space: normal; /* Allow text to wrap to the next line */
+  overflow: hidden; /* Hide any overflow content */
+  font-family: "Kanit",sans-serif;
+  color: #191B30;
+  border-radius: 10px;
+  margin-left: 20px;
+  margin-bottom: 30px;
+}
+
+
+
+
+.setting-account-page {
+  background-color: white;
+  width: 77%;
+  height:75%;
+  margin-left: 270px;
+  position: absolute; /* Make the component overlap other elements */
+  top: 85px; /* Adjust the vertical position */
+  z-index: 10; /* Ensure it stays on top */
+  text-align: left;
+  border-radius: 10px;
+  padding:20px;
+  overflow-y: auto;
+
+}
+
+
+.setting-account-page .setting-profile-header{
+color: #333333;
+font-family: "Kanit",sans-serif;
+font-size: 25px;
+margin-left: 200px;
+font-weight: bold;
+
+}
+
+.setting-profile-header-description{
+color: #333333;
+font-family: "Kanit",sans-serif;
+font-size: 15px;
+font-weight: 100;
+margin-left:-563px ;
+margin-top: -10px;
+}
+
+.setting-profile-header-line01{
+width: 600px;
+height: 2px;
+background-color: lightgray;
+margin-left: 200px;
+margin-top: 130px;
+}
+
+.setting-profile-icon{
+width: 100px;
+height: 100px;
+border-radius: 100%;
+border: 3px solid #191B30;
+margin-left: 200px;
+margin-top: 10px;
+
+
+
+}
+
+.setting-background-icon{
+position: absolute;
+width:400px;
+height:100px;
+border-radius: 10px;
+border:3px solid #191B30;
+margin-left: 400px;
+margin-top: -110px;
+
+}
+
+/* Button styling for editing images */
+
+.edit-profile-image-button {
+position:absolute;
+margin-top: 10px;
+padding: 8px 12px;
+font-size: 14px;
+color: #fff;
+background-color: #191B30;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+width: fit-content;
+margin-top: 50px;
+margin-left: -70px;
+
+
+}
+.edit-background-image-button {
+position:absolute;
+margin-top: 10px;
+padding: 8px 12px;
+font-size: 14px;
+color: #fff;
+background-color: #191B30;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+width: fit-content;
+margin-left: 400px;
+}
+
+.edit-profile-image-button:hover, .edit-background-image-button:hover {
+background-color: #e03e00;
+}
+
+/* Styling for the username and bio containers */
+.setting-display-name{
+margin-bottom: 25px;
+display: flex;
+flex-direction: column;
+width: 400px;
+margin-left: 200px;
+margin-top: 80px;
+
+}
+
+.setting-bio {
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  margin-left: 200px;
+  
+}
+
+/* Labels */
+.setting-display-name label,
+.setting-bio label {
+  font-weight: 600;
+  font-size: 1.2em;
+  color: #333333;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+  font-weight: 300;
+  font-family: sans-serif;
+}
+
+/* Input field styling */
+.username-input-field {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1em;
+  background-color: #ffffff;
+  color: #333;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  outline: none;
+  font-family: sans-serif;
+}
+
+/* Textarea field styling for biography */
+.bio-field {
+  width: 90%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1em;
+  background-color: #ffffff;
+  color: #333;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  resize:none;
+  outline: none;
+  min-height: 80px; /* Ensures the bio field has enough height */
+  font-family: sans-serif;
+}
+
+/* Focus state for input and textarea fields */
+.username-input-field:focus,
+.bio-field:focus {
+  border: 1px solid #4CAF50;
+  background-color: #fff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Optional: Styling for hover state */
+.username-input-field:hover,
+.bio-field:hover {
+  border-color: #aaa;
+}
+
+/* Responsive: Adjust the width for smaller screens */
+@media (max-width: 768px) {
+  .input-field,
+  .bio-field {
+      font-size: 0.9em;
+  }
+}
+
+
+.setting-account-page .setting-security-header{
+color: #333333;
+font-family: "Kanit",sans-serif;
+font-size: 25px;
+margin-left: 200px;
+margin-top:150px ;
+font-weight: bold;
+
+}
+
+
+.setting-security-header-description{
+color: #333333;
+font-family: "Kanit",sans-serif;
+font-size: 15px;
+font-weight: 100;
+margin-left:-520px ;
+margin-top: -10px;
+}
+
+.setting-security-header-line01{
+width: 600px;
+height: 2px;
+background-color: lightgray;
+margin-left: 200px;
+margin-top: -10px;
+}
+
+/* Change Password and Login Activity sections */
+.setting-change-password {
+font-family: sans-serif;
+margin-left:200px;
+margin-top: 20px;
+}
+
+/* Button for change password */
+.change-password-button {
+padding: 10px 20px;
+background-color:  #191B30;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+margin-left: 20px;
+}
+
+.change-password-button:hover {
+background-color:#FF4500;
+}
+
+.setting-security-header-line02{
+width: 600px;
+height: 1px;
+background-color: lightgray;
+margin-left: 200px;
+margin-top: 20px;
+}
+
+/* Login Activity Section */
+.setting-login-activity {
+background-color: #f7f7f7;
+border: 2px solid #191B30;
+border-radius: 8px;
+padding: 20px;
+margin-bottom: 20px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+font-family: sans-serif;
+margin-left: 200px;
+margin-top: 20px;
+width: 260px;
+height: 200px; /* Increase height to allow scrolling */
+position: relative;
+text-align: left;
+overflow: hidden; /* Prevent overflow from affecting the container */
+}
+
+/* Make the h2 fixed to the top */
+.setting-login-activity h2 {
+margin-top: -20px;
+background-color: #191B30;
+color: white;
+position: sticky; /* Sticks to the top of the container */
+top: 0; /* Stays at the top of the parent container */
+padding: 10px;
+z-index: 10; /* Make sure it stays above the scrollable content */
+}
+
+/* List of login times (scrollable) */
+.setting-login-activity ul {
+position: relative;
+top: 10px; /* Move it below the sticky header */
+padding: 10px;
+margin: 0;
+list-style-type: none;
+height: 120px; /* Set a specific height to enable scrolling */
+overflow-y: auto; /* Scrollable content */
+}
+
+/* List item styling */
+.setting-login-activity ul li {
+padding-bottom: 5px;
+font-size: 0.9em;
+color: #333;
+}
+
+
+
+/* Modal styling */
+.modal {
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: rgba(0, 0, 0, 0.5);
+display: flex;
+align-items: center;
+justify-content: center;
+font-family: sans-serif;
+}
+
+.modal-content {
+background-color: white;
+padding: 30px;
+border-radius: 8px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+max-width: 400px;
+width: 100%;
+}
+
+label {
+display: block;
+margin-bottom: 10px;
+font-weight: bold;
+}
+
+.modal-content input {
+width: 100%;
+padding: 10px;
+margin-bottom: 20px;
+border: 1px solid #ccc;
+border-radius: 5px;
+}
+
+.confirm-button {
+padding: 10px 20px;
+background-color: #4CAF50;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.confirm-button:hover {
+background-color: #45a049;
+}
+
+.cancel-button {
+padding: 10px 20px;
+background-color: #e03e00;
+color: white;
+border: none;
+border-radius: 5px;
+margin-left: 10px;
+cursor: pointer;
+}
+
+.error-message {
+color: red;
+margin-bottom: 15px;
+}
+
+
+
+
+.setting-account-page .setting-email-header{
+color: #333333;
+font-family: "Kanit",sans-serif;
+font-size: 25px;
+margin-left: 200px;
+margin-top:80px ;
+font-weight: bold;
+
+}
+
+.setting-email-header-description{
+color: #333333;
+font-family: "Kanit",sans-serif;
+font-size: 15px;
+font-weight: 100;
+margin-left:-450px ;
+margin-top: -10px;
+}
+
+.setting-email-header-line01{
+width: 600px;
+height: 2px;
+background-color: lightgray;
+margin-left: 200px;
+margin-top: -10px;
+}
+
+.setting-email-header-line02{
+width: 600px;
+height: 1px;
+background-color: lightgray;
+margin-left: 200px;
+margin-top: 30px;
+}
+
+
+/* Email Input Field */
+.email-input-field {
+width: 51%;
+padding: 10px;
+margin-left: 200px;
+border: 2px solid #ccc;
+border-radius: 4px;
+font-size: 16px;
+}
+
+.setting-email-address label{
+font-family: sans-serif;
+font-weight: 300;
+margin-left: 200px;
+margin-top: 20px;
+}
+
+.verify-email-button{
+margin-top: 0px;
+padding: 10px 15px;
+font-size: 14px;
+color: #fff;
+background-color: #191B30;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+margin-left: 200px;
+}
+
+.unsubscribe-button, .save-changes-button {
+margin-top: 10px;
+padding: 10px 15px;
+font-size: 14px;
+color: #fff;
+background-color: #191B30;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+margin-left: 200px;
+}
+
+.verify-email-button:hover, .unsubscribe-button:hover, .save-changes-button:hover {
+background-color: #e03e00;
+}
+
+.setting-notification-preferences h3{
+margin-bottom: 15px;
+margin-left: 200px;
+font-family: sans-serif;
+font-weight: 500;
+margin-top: 50px;
+}
+
+/* Notification Preferences */
+.setting-notification-option {
+margin-bottom: 15px;
+margin-left: 200px;
+font-family: sans-serif;
+font-weight: 200;
+}
+
+.setting-notification-option label {
+margin-left: 10px;
+font-size: 16px;
+color: #333;
+font-weight: 200;
+}
+
+/* Notification Frequency */
+.notification-frequency-select {
+width: 50%;
+padding: 10px;
+margin-top: 5px;
+border: 2px solid #ccc;
+border-radius: 4px;
+font-size: 16px;
+margin-left: 200px;
+}
+
+
+
+.setting-account-page .setting-personal-info{
+color: #333333;
+font-family: "Kanit",sans-serif;
+font-size: 25px;
+margin-left: 200px;
+margin-top:80px ;
+font-weight: bold;
+
+}
+
+.setting-email-personal-description{
+color: #333333;
+font-family: "Kanit",sans-serif;
+font-size: 15px;
+font-weight: 100;
+margin-left:-575px ;
+margin-top: -10px;
+}
+
+.setting-personal-header-line01{
+width: 600px;
+height: 2px;
+background-color: lightgray;
+margin-left: 200px;
+margin-top: -10px;
+}
+
+.setting-full-name label{
+font-family: sans-serif;
+margin-left: 200px;
+margin-top:20px;
+}
+
+.setting-dob label{
+font-family: sans-serif;
+margin-left: 200px;
+
+}
+
+
+.setting-phone-number label{
+font-family: sans-serif;
+margin-left: 200px;
+
+}
+
+.setting-gender label{
+font-family: sans-serif;
+margin-left: 200px;
+
+}
+
+
+/* Full Name Input Field */
+.name-input-field {
+width: 120%;
+padding: 10px;
+margin: 5px 0 20px 0;
+border: 2px solid #ccc;
+border-radius: 4px;
+font-size: 16px;
+box-sizing: border-box;
+margin-left: 200px;
+}
+
+/* Date of Birth Input Field */
+.dob-input-field {
+width: 120%;
+padding: 10px;
+margin: 5px 0 20px 0;
+border: 2px solid #ccc;
+border-radius: 4px;
+font-size: 16px;
+box-sizing: border-box;
+font-family: Arial, sans-serif;
+margin-left: 200px;
+}
+
+/* Phone Number Input Field */
+.phone-input-field {
+width: 120%;
+padding: 10px;
+margin: 5px 0 20px 0;
+border: 2px solid #ccc;
+border-radius: 4px;
+font-size: 16px;
+box-sizing: border-box;
+margin-left: 200px;
+}
+
+/* Gender Select Dropdown */
+.gender-input-field {
+width: 120%;
+padding: 10px;
+margin: 5px 0 20px 0;
+border: 2px solid #ccc;
+border-radius: 4px;
+font-size: 16px;
+box-sizing: border-box;
+background-color: #fff;
+margin-left: 200px;
+appearance: none; /* Removes default arrow for consistent styling across browsers */
+margin-bottom: 20px;
+}
+
+/* Common Styles for Labels */
+label {
+display: block;
+margin-bottom: 8px;
+font-weight: bold;
+color: #333;
+}
+
+/* Hover and Focus Effects for Inputs and Select */
+.name-input-field:focus,
+.dob-input-field:focus,
+.phone-input-field:focus,
+.gender-input-field:focus {
+border-color: #007bff;
+outline: none;
+}
+
+.name-input-field:hover,
+.dob-input-field:hover,
+.phone-input-field:hover,
+.gender-input-field:hover {
+border-color: #aaa;
+}
+
+
+/* Styling for Container Elements */
+.setting-full-name,
+.setting-dob,
+.setting-phone-number,
+.setting-gender {
+display: flex;
+flex-direction: column;
+max-width: 500px; /* Adjust as needed for form layout */
+margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+.setting-full-name,
+.setting-dob,
+.setting-phone-number,
+.setting-gender {
+    max-width: 100%;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.kanit-thin {
+font-family: "Kanit", sans-serif;
+font-weight: 100;
+font-style: normal;
+}
+
+.kanit-extralight {
+font-family: "Kanit", sans-serif;
+font-weight: 200;
+font-style: normal;
+}
+
+.kanit-light {
+font-family: "Kanit-light", sans-serif;
+font-weight: 300;
+font-style: normal;
+}
+
+.kanit-regular {
+font-family: "Kanit", sans-serif;
+font-weight: 400;
+font-style: normal;
+}
+
+.kanit-medium {
+font-family: "Kanit", sans-serif;
+font-weight: 500;
+font-style: normal;
+}
+
+.kanit-semibold {
+font-family: "Kanit", sans-serif;
+font-weight: 600;
+font-style: normal;
+}
+
+.kanit-bold {
+font-family: "Kanit", sans-serif;
+font-weight: 700;
+font-style: normal;
+}
+
+.kanit-extrabold {
+font-family: "Kanit", sans-serif;
+font-weight: 800;
+font-style: normal;
+}
+
+.kanit-black {
+font-family: "Kanit", sans-serif;
+font-weight: 900;
+font-style: normal;
+}
+
+.kanit-thin-italic {
+font-family: "Kanit", sans-serif;
+font-weight: 100;
+font-style: italic;
+}
+
+.kanit-extralight-italic {
+font-family: "Kanit", sans-serif;
+font-weight: 200;
+font-style: italic;
+}
+
+.kanit-light-italic {
+font-family: "Kanit", sans-serif;
+font-weight: 300;
+font-style: italic;
+}
+
+.kanit-regular-italic {
+font-family: "Kanit", sans-serif;
+font-weight: 400;
+font-style: italic;
+}
+
+.kanit-medium-italic {
+font-family: "Kanit", sans-serif;
+font-weight: 500;
+font-style: italic;
+}
+
+.kanit-semibold-italic {
+font-family: "Kanit", sans-serif;
+font-weight: 600;
+font-style: italic;
+}
+
+.kanit-bold-italic {
+font-family: "Kanit", sans-serif;
+font-weight: 700;
+font-style: italic;
+}
+
+.kanit-extrabold-italic {
+font-family: "Kanit", sans-serif;
+font-weight: 800;
+font-style: italic;
+}
+
+.kanit-black-italic {
+font-family: "Kanit", sans-serif;
+font-weight: 900;
+font-style: italic;
+}

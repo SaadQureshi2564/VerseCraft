@@ -1,0 +1,208 @@
+
+.header-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 4;
+    height: 65px;
+    width: 99%;
+    padding: 5px 10px;
+    background-color: white;
+    position: sticky;
+    top: 0;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 6px rgba(12, 4, 168, 0.1);
+}
+
+.mobile-header {
+    flex-direction: row;
+}
+
+/* Logo Container */
+.header-header-logo-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 20px;
+    margin-left:-15px;
+   
+}
+
+
+
+
+/* Logo Icon */
+.header-logo-icon {
+    width: 80px;
+    height: 80px;
+    margin-top: 10px;
+    cursor: pointer;
+  
+}
+
+
+
+/* Logo Text */
+.header-logo-text {
+    font-family: monospace;
+    font-size: 25px;
+    margin-left: -10px;
+    font-weight: 500;
+    cursor: pointer;
+    padding-top:6px;
+    padding-bottom:6px;
+    padding-left: 3px;
+    padding-right: 3px;
+    transition: background-color 0.2s ease;
+    border-radius: 10px;
+}
+
+
+
+.header-explore{
+    font-size: 15px;
+    padding: 7px 12px;
+    font-weight: 450;
+    transition: background-color 0.3s ease;
+    color: black;
+    font-family: sans-serif;
+    border-radius: 4px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    cursor: pointer;
+}
+
+.header-explore:hover {
+    background-color:  #e3eaf7; /* light greyish-blue color */
+    border-radius: 4px;
+    color: rgb(13, 5, 125);
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+/* Navigation Styles */
+.header-header nav {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+}
+
+.header-header nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    gap: 40px;
+
+    
+}
+
+.header-header nav ul li {
+    font-size: 15px;
+    padding-left: 3px;
+    font-weight: 'lighter';
+   
+    transition: background-color 0.3s ease;
+    color: black;
+    font-family: sans-serif;
+    transition: background-color 0.2s ease;
+    border-radius: 4px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    
+    cursor: pointer;
+}
+
+
+.header-header nav ul li:hover {
+    background-color:  #e3eaf7; /* light greyish-blue color */
+    border-radius: 4px;
+    color: rgb(13, 5, 125);
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    
+}
+
+.header-notification{
+
+    align-self: center;
+    justify-content: center;
+    margin-right: 50px;
+    cursor: pointer;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    
+}
+
+.header-notification:hover{
+    background-color:  #e3eaf7; /* light greyish-blue color */
+    border-radius: 4px;
+    color: rgb(13, 5, 125);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    
+    
+}
+
+/* Profile Container */
+.header-profile-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    padding: 5px;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    padding-left: 5px !important;
+    
+}
+
+.header-profile-container:hover,
+.header-profile-active {
+    background-color: #e3eaf7 !important; /* Light greyish-blue color */
+    border-radius: 10px !important;
+    color: rgb(13, 5, 125) !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+
+
+/* Profile Icon */
+.header-profile-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 0.8rem;
+    border-radius: 50%;
+    border: 2px solid #191B30;
+}
+
+/* Profile Name */
+.header-profile-name {
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 150px;
+    max-width: 150px;
+}
+
+
+
+.header-profile-menu{
+    width: 250px !important;
+}

@@ -1,0 +1,815 @@
+
+
+.story-Container{
+    display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background-color:white;
+}
+
+
+    
+    /* Sidebar */
+    .storyboard-sidebar {
+    position: fixed; /* Sidebar should be fixed so that it can overlap other content */
+    top: 13%;
+    margin-left: 20px;
+    height: 85%;
+    width: 2.4%; /* Collapsed width */
+    background:white;
+    padding: 10px;
+    z-index: 10;
+    transition: width 0.3s ease; /* Smooth transition for opening/closing */
+    overflow: hidden; /* Hide overflowing content when collapsed */
+    margin-top: 50px;
+    color: rgb(237, 230, 217);
+    font-size: 20px;
+    font-family: sans-serif;
+    margin-top: -9px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); /* X, Y, Blur, Colour */
+    
+    }
+    
+    /* Expanded sidebar */
+    .storyboard-sidebar.open {
+    width: 12%; /* Expanded width */
+    }
+    
+    /* Toggle button styling */
+    .storyboard-sidebar-toggle {
+    position: absolute; /* Position the toggle button relative to the sidebar */
+    top: 10px; /* Fixed distance from the top of the sidebar */
+    left: 12px; /* Fixed distance from the left of the sidebar */
+    background: none;
+    border: none;
+    color: black;
+    font-size: 25px;
+    cursor: pointer;
+    }
+    
+    
+    
+    /* Styling for the icons and labels within the sidebar */
+    .storyboard-journal,
+    .storyboard-notifications,
+    .storyboard-goals,
+    .storyboard-favorites,
+    .storyboard-communities,
+    .storyboard-settings {
+    display: flex;
+    align-items: center; /* Vertically center icons and text */
+    margin: 10px 0; /* Space between each item */
+    padding-left: 10px; /* Indentation for better visual spacing */
+    width: 100%; /* Ensures each item takes full width */
+    transition: opacity 0.3s ease; /* Smooth transition for opacity */
+    cursor: pointer;
+    color: black;
+    }
+    
+    /* Maintain fixed width for items when sidebar is collapsed */
+    .storyboard-journal,
+    .storyboard-notifications,
+    .storyboard-goals,
+    .storyboard-favorites,
+    .storyboard-communities,
+    .storyboard-settings {
+    width: calc(100% - 10px); /* Adjust width minus padding */
+    margin-top:20px;
+    margin-left: -10px;
+    padding:10px;
+    font-size: 15px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+    
+    }
+    
+    /* Maintain fixed width for items when sidebar is collapsed */
+    .storyboard-journal:hover,
+    .storyboard-notifications:hover,
+    .storyboard-goals:hover,
+    .storyboard-favorites:hover,
+    .storyboard-communities:hover,
+    .storyboard-settings:hover {
+    background-color: #e1e1e1;
+    border-radius: 10px;
+    cursor: pointer;
+    
+    }
+    
+    .storyboard-journal{
+    margin-top: 70px;
+    }
+    
+    
+    
+    /* Icon Styles */
+    .storyboard-journal-icon,
+    .storyboard-noti-icon,
+    .storyboard-goal-icon,
+    .storyboard-fav-icon,
+    .storyboard-comm-icon,
+    .storyboard-set-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 20px; /* Space between icon and text */
+    cursor: pointer;
+    margin-left: 7px;
+    
+    }
+    
+    
+    /* Adjust the text and labels for expanded state */
+    .storyboard-sidebar.open .storyboard-journal,
+    .storyboard-sidebar.open .storyboard-notifications,
+    .storyboard-sidebar.open .storyboard-goals,
+    .storyboard-sidebar.open .storyboard-favorites,
+    .storyboard-sidebar.open .storyboard-communities,
+    .storyboard-sidebar.open .storyboard-settings {
+    justify-content: flex-start; /* Align items when expanded */
+    cursor: pointer;
+    }
+    
+    /* Label for the icons when the sidebar expands */
+    .storyboard-sidebar.open .storyboard-journal::after,
+    .storyboard-sidebar.open .storyboard-notifications::after,
+    .storyboard-sidebar.open .storyboard-goals::after,
+    .storyboard-sidebar.open .storyboard-favorites::after,
+    .storyboard-sidebar.open .storyboard-communities::after,
+    .storyboard-sidebar.open .storyboard-settings::after {
+    content: attr(data-label);
+    color: #FFF;
+    margin-left: 10px; /* Space between icon and label */
+    font-size: 16px; /* Adjust label font size */
+    }
+    
+
+.story-main-content {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+    margin-left: 50px;
+    border: 1px solid black;
+    margin-top: 5px;
+    margin-left: 90px;
+    width: 93.5%;
+    border-radius: 10px;
+    
+    
+}
+
+.story-outline {
+    background-color: #191B30;
+    width: 15%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid black;
+    border-top-left-radius: 10px;
+    height: 100%; /* Ensure full height for the scrollbar */
+    overflow: hidden; /* Hide overflow to avoid scrollbars in this section */
+    margin-top: -12px;
+}
+
+.story-outline2 {
+    background-color: #ffffff;
+    width: 100%; /* Use full width of the outline container */
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Ensures scrollbar takes full height */
+    overflow-y: auto; /* Adds vertical scrollbar if content exceeds height */
+}
+
+.story-outline h2 {
+    color: #191B30;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 300;
+    border-bottom: 2px solid #191B30;
+    padding-bottom: 10px;
+}
+
+.custom-thumb {
+    background-color: #F47D4B;
+    border-radius: 10px;
+    visibility: hidden; /* Hidden by default */
+}
+
+.custom-track {
+    background-color: #191B30;
+    border-radius: 10px;
+    visibility: hidden; /* Hidden by default */
+}
+
+.story-chapter-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.story-chapter-list li {
+    padding: 10px 0;
+    color: #191B30;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 300;
+    cursor: pointer;
+    text-align: center;
+    border-bottom: 1px solid #000000;
+}
+
+.story-chapter-list li:hover {
+    background-color: #fabda3;
+    color: #191B30;
+}
+
+.story-editor {
+
+    position: relative;
+    padding-bottom: 0px; /* Ensure space for the keyboard */
+    height: 100%;
+    width: 100%;
+    overflow: scroll;
+    background-color: white;
+}
+
+.rtl .ql-editor {
+    direction: rtl;
+    text-align: right;
+}
+
+.editor-container[lang='ur'] .ql-editor {
+    direction: rtl;
+    text-align: right;
+}
+
+/* Custom styles for ReactQuill toolbar */
+.story-editor  .ql-toolbar {
+    width: 100%; /* Adjust width as needed */
+    height: 100px;
+    top: 0;
+    border-bottom: 1px solid #ccc; /* Add a border for better visibility */
+    padding: 1rem; /* Adjust padding */
+    position: sticky;
+    background-color: #fff;
+    z-index: 1;
+}
+
+.story-editor {
+    overflow-y: scroll; /* Add this to enable scrolling */
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar in IE and Edge */
+  }
+  
+  .story-editor::-webkit-scrollbar {
+    display: none; /* Hide scrollbar in Chrome, Safari, and Opera */
+  }
+
+.ql-formats {
+    margin-right: 0.5rem; /* Space between groups of buttons */
+}
+
+/* Customize individual button styles */
+.ql-bold, .ql-italic, .ql-underline {
+    color: #000; /* Change color */
+    font-size: 14px; /* Adjust font size */
+}
+
+.ql-header {
+    font-size: 16px; /* Adjust font size for headers */
+}
+
+.ql-list {
+    font-size: 14px; /* Adjust font size for lists */
+}
+
+/* You can also customize dropdowns and other elements */
+.ql-picker {
+    background-color: #f5f5f5; /* Background color for dropdowns */
+    border-radius: 4px; /* Round corners */
+}
+
+.ql-picker-item {
+    font-size: 14px; /* Adjust font size for dropdown items */
+}
+
+/* Optional: Customize toolbar buttons */
+.ql-toolbar .ql-active {
+    background-color: #ddd; /* Background color when active */
+    border-radius: 4px; /* Round corners */
+}
+
+.keyboard-container {
+    position: absolute;
+    bottom: 0; /* Align it to the bottom of the parent */
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: none;
+    background-color: #f5f5f5; /* Adjust the background color as needed */
+}
+
+.keyboard-container.visible {
+    display: block;
+}
+
+.close-keyboard {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #F47D4B;
+    border: none;
+    color: white;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.storyboard-collaborators-container{
+    overflow: auto;
+    height: 40px;
+    padding:0px;
+
+}
+
+.storyboard-collaborators{
+    align-self: start;
+    gap: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: white;
+    padding:5px;
+    border-radius: 10px;
+    
+  
+
+}
+
+
+
+
+
+.storyboard-users-profile-image{
+    border-radius: 100%;
+
+
+}
+
+.storyboard-users-self-and-collab{
+    border-bottom: 1px solid black;
+    padding: 0;
+}
+
+.storyboard-user-name-collaborator{
+    font-size: 15px;
+    color: #000;
+    font-weight: 500;
+    
+}
+
+.story-notes-section {
+    width: 20%;
+    background-color: #e1dbd6;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 96.5%;
+    border-left: 2px solid #bea88d;
+    border-bottom-right-radius: 10px;
+    overflow: hidden;
+}
+
+.story-notes-header {
+    display: flex; /* Use flexbox to align items horizontally */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center content in the header */
+    position: relative; /* Position the button relative to this container */
+    margin-top: -10px;
+    color:black;
+    border-bottom: 2px solid black;
+}
+
+.story-notes-header h2{
+    color: #000;
+}
+
+.storyboard-users-number{
+    color: black;
+    font-family: sans-serif;
+    font-weight: 300;
+    border-bottom: 1px solid black;
+}
+
+.add-chapter-button{
+    background-color: #1e2226ff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.add-chapter-button:hover{
+    transform: scale(1.1);
+background-color: #f95a1b; /* Lighter shade on hover */
+
+
+}
+
+.story-add-note {
+    position: absolute;
+    left: 10px;
+    top: 51%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ffffff;
+    background-color: #333; /* Initial background color */
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 100%;
+
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Add transition effect */
+
+  }
+  
+  .story-add-note:hover {
+    background-color: #ffffff; /* Hover background color */
+    transform: translateY(-60%) scale(1.1); /* Lift and scale the button */
+   
+  }
+/* Hide scrollbar for Webkit browsers like Chrome, Safari */
+.story-notes-container::-webkit-scrollbar {
+    display: none;
+}
+
+.story-notes-container {
+    height: 70%;
+    overflow: auto;
+    padding-bottom: 20px; /* Adjust bottom padding for spacing */
+}
+
+.story-plus-icon {
+    width: 20px; /* Adjust width */
+    height: 20px; /* Adjust height */
+}
+
+.story-modal {
+    /* Container styles */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 200px;
+    transform: translate(-50%, -50%);
+    background-color: white; /* Light background color */
+    border-radius: 12px; /* More rounded corners */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3); /* Slightly more shadow */
+    padding: 20px;
+    position: relative; /* Relative positioning for the close button */
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+   
+}
+
+.story-modal h3 {
+   
+    font-size: 20px;
+    color: #191B30;
+    margin: 0; /* Remove default margin */
+    font-weight: 400;
+    font-family: 'Kanit', sans-serif;
+    text-align: center;
+    margin-bottom:10px;
+}
+
+.story-modal h2{
+    font-size: 20px;
+    color: #191B30;
+    margin: 0; /* Remove default margin */
+    font-weight: 400;
+    font-family: 'Kanit', sans-serif;
+    text-align: center;
+    margin-bottom:50px;
+
+}
+
+.story-save-note-button{
+    background-color: #000;
+    color: white;
+    border-radius: 3px;
+    padding-top:5px;
+    padding-bottom:5px;
+    font-family: sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    transition: background-color 0.2s ease-in-out, color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Add transform transition */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Add initial shadow */
+    padding-right:30px;
+    padding-left:30px;
+}
+
+.story-save-note-button:hover{
+    background-color: #f95a1b;
+    color: #000;
+    cursor: pointer;
+    transform: translateY(-2px) scale(1.02); /* Add lifting and scaling effect */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Add hover shadow */
+}
+
+.story-close-button {
+    position: absolute; /* Absolute positioning */
+    width: fit-content;
+    height: fit-content;
+    top: 5px; /* Distance from the top */
+    right: 10px; /* Distance from the right */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.story-close-icon-chapter {
+    width: 25px; /* Smaller size */
+    height: 25px;
+}
+
+
+
+.story-close-icon-chapter:hover {
+    opacity: 0.6; /* Lighter opacity on hover */
+}
+
+.story-modal-content{
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+    gap:10px;
+    margin-bottom: 20px;
+}
+
+.story-modal-content input{
+    width: 350px;
+    padding: 10px;
+
+
+}
+
+.submit-chapter-button {
+    background-color: #000;
+    color: white;
+    padding: 10px;
+    border-radius: 3px;
+    font-family: sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    transition: background-color 0.2s ease-in-out, color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Add transform transition */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Add initial shadow */
+  }
+  
+  .submit-chapter-button:hover {
+    background-color: #f95a1b;
+    color: #000;
+    cursor: pointer;
+    transform: translateY(-2px) scale(1.02); /* Add lifting and scaling effect */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Add hover shadow */
+  }
+
+.story-notes-header h2 {
+    font-weight: 500;
+    font-size: 20px;
+    color: #000000;
+}
+
+.story-notes-list {
+    list-style: none;
+    padding: 0;
+    padding-top: 20px;
+    margin: 0;
+}
+
+.story-notes-list li {
+    position: relative;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px 40px 10px 10px; /* Added extra padding on the right */
+    margin-bottom: 10px;
+    overflow: hidden; /* Ensure content doesn’t overflow */
+    word-wrap: break-word; /* Break long words if needed */
+    box-sizing: border-box; /* Include padding and border in the element’s total width and height */
+}
+
+.story-notes-list li:hover {
+    background-color: #F47D4B;
+    color: #191B30;
+}
+
+.story-notes-section .scrollable {
+    flex: 1; /* Make it take the remaining space */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.story-note-text .ql-toolbar {
+    height: 100px; /* Adjust the height as needed */
+    padding: 4px;
+}
+
+.story-note-text .ql-toolbar .ql-formats {
+    margin: 0;
+}
+
+.story-note-text .ql-toolbar button {
+    height: 32px; /* Adjust the button height to fit the toolbar height */
+    line-height: 32px; /* Align the text vertically */
+}
+
+.story-close-note {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1; /* Ensure button is clickable above text */
+}
+
+.story-close-note img {
+    width: 16px;
+    height: 16px;
+    display: block;
+    transition: opacity 0.3s; /* Smooth transition for hover effect */
+}
+
+.story-close-note:hover img {
+    content: url('../Images/Close-black.png'); /* Switch to closeIcon2 on hover */
+}
+
+.story-close-icon {
+    width: 16px;
+    height: 16px;
+    display: block;
+}
+
+.story-close-icon:hover {
+    background-color: #191B30;
+    color: #F47D4B;
+}
+
+
+.story-action-buttons {
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; /* Even spacing between buttons */
+}
+
+.story-save-button, .story-save-as-new-button, .story-preview-button {
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 10px;
+}
+
+.story-save-button:hover, .story-save-as-new-button:hover, .story-preview-button:hover {
+    transform: scale(1.05);
+    background-color: #e3b9a8; /* Lighter shade on hover */
+}
+
+
+
+.kanit-thin {
+    font-family: "Kanit", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.kanit-extralight {
+    font-family: "Kanit", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
+.kanit-light {
+    font-family: "Kanit-light", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.kanit-regular {
+    font-family: "Kanit", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.kanit-medium {
+    font-family: "Kanit", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.kanit-semibold {
+    font-family: "Kanit", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.kanit-bold {
+    font-family: "Kanit", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.kanit-extrabold {
+    font-family: "Kanit", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.kanit-black {
+    font-family: "Kanit", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+.kanit-thin-italic {
+    font-family: "Kanit", sans-serif;
+    font-weight: 100;
+    font-style: italic;
+}
+
+.kanit-extralight-italic {
+    font-family: "Kanit", sans-serif;
+    font-weight: 200;
+    font-style: italic;
+}
+
+.kanit-light-italic {
+    font-family: "Kanit", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.kanit-regular-italic {
+    font-family: "Kanit", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.kanit-medium-italic {
+    font-family: "Kanit", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.kanit-semibold-italic {
+    font-family: "Kanit", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.kanit-bold-italic {
+    font-family: "Kanit", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.kanit-extrabold-italic {
+    font-family: "Kanit", sans-serif;
+    font-weight: 800;
+    font-style: italic;
+}
+
+.kanit-black-italic {
+    font-family: "Kanit", sans-serif;
+    font-weight: 900;
+    font-style: italic;
+}

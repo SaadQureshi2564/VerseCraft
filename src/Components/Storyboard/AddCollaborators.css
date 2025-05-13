@@ -1,0 +1,187 @@
+/* frontend/src/components/AddCollaborators.css */
+
+/* Overlay for the modal */
+.ac-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal content container */
+.ac-modal-content {
+  background-color: #fff;
+  padding: 20px 30px;
+  width: 500px;
+  max-height: 80vh;
+  overflow-y: auto;
+  border-radius: 8px;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Close button */
+.ac-close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Modal title */
+.ac-title {
+  margin-top: 0;
+  text-align: center;
+  color: #333;
+}
+
+/* Search input */
+.ac-search-input {
+  width: 100%;
+  padding: 10px;
+  margin: 15px 0 20px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Users list container */
+.ac-users-list {
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+/* Individual user item */
+.ac-user-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+/* User information container */
+.ac-user-info {
+  display: flex;
+  align-items: center;
+}
+
+/* User avatar */
+.ac-user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+/* User details (name and email) */
+.ac-user-details {
+  display: flex;
+  flex-direction: column;
+}
+
+/* User name */
+.ac-user-name {
+  margin: 0;
+  font-weight: bold;
+  color: #333;
+}
+
+/* User email */
+.ac-user-email {
+  margin: 0;
+  color: #777;
+  font-size: 0.9em;
+}
+
+/* Invite button */
+.ac-invite-button {
+  padding: 5px 10px;
+  background-color: #F47D4B;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.ac-invite-button:hover {
+  background-color: #e06b3b;
+}
+
+/* Disabled state for invite button */
+.ac-button-disabled {
+  background-color: #ccc !important;
+  cursor: not-allowed;
+}
+
+/* Message when no users are found */
+.ac-no-users {
+  text-align: center;
+  color: #555;
+  margin-top: 20px;
+}
+
+/* Confirmation Modal Styles */
+.ac-confirmation-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1100; /* Higher than main modal */
+}
+
+/* Confirmation Modal Content */
+.ac-confirmation-modal {
+  background-color: #fff;
+  padding: 20px 30px;
+  width: 400px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Confirmation Buttons */
+.ac-confirmation-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.ac-confirm-button, .ac-cancel-button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.ac-confirm-button {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.ac-confirm-button:hover {
+  background-color: #218838;
+}
+
+.ac-cancel-button {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.ac-cancel-button:hover {
+  background-color: #c82333;
+}

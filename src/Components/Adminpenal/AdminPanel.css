@@ -1,0 +1,1674 @@
+/* **************************************************************
+ * GLOBAL / LAYOUT STYLES (Admin Panel, Sidebar, etc.)
+ **************************************************************/
+ .adminpenal-container {
+  display: flex;
+  height: 100vh;
+  background-color: #f4f6f9; 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Fancy gradient for the top portion of the sidebar header */
+.fancy-gradient-bg {
+  background-color: #020726; /* Dark navy */
+  border-bottom: 1px solid #2b2f48; 
+}
+
+/* SIDEBAR */
+.adminpenal-sidebar {
+  width: 280px;
+  background-color: #020726; /* Dark navy */
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s ease, transform 0.3s ease;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.1);
+  border-right: 1px solid #2b2f48; 
+}
+
+.adminpenal-sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  color: #f9a109; /* Orange text */
+  background-color: #020726;
+  position: relative;
+}
+
+.adminpenal-sidebar-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Toggle button (bars / times) in header */
+.adminpenal-sidebar-toggle-btn {
+  background: none;
+  border: none;
+  color: #f9a109;
+  font-size: 24px;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Collapsed sidebar */
+.adminpenal-sidebar.closed {
+  width: 80px;
+}
+
+/* Welcome text under header */
+.adminpenal-welcome-text {
+  color: #fff;
+  padding: 16px 24px;
+  border-bottom: 1px solid #2b2f48;
+  font-size: 14px;
+}
+
+/* Sidebar Menu */
+.adminpenal-sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+  overflow-y: auto;
+  background-color: #020726;
+}
+
+/* Section titles */
+.adminpenal-menu-section {
+  padding: 12px 24px;
+  border-bottom: 1px solid #2b2f48;
+}
+.adminpenal-menu-section-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #e0dfdf;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Menu items */
+.adminpenal-sidebar-menu li {
+  display: flex;
+  align-items: center;
+  padding: 14px 24px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, padding-left 0.3s ease;
+  color: #f9a109; /* Orange text */
+  position: relative;
+  font-size: 15px;
+  border-bottom: 1px solid #2b2f48;
+}
+
+.adminpenal-menu-icon {
+  margin-right: 16px;
+  font-size: 20px;
+  color: #f9a109; /* Orange icons */
+}
+
+.adminpenal-menu-text {
+  white-space: nowrap;
+}
+
+/* Hover */
+.adminpenal-sidebar-menu li:hover {
+  background-color: #13183e; /* Slightly lighter navy on hover */
+}
+
+/* Active item - highlight or add a dot */
+.adminpenal-sidebar-menu li.active {
+  background-color: #020726; /* keep same as base or set to #13183e if you want */
+  font-weight: 600;
+}
+
+/* Dot indicator for active item */
+.adminpenal-sidebar-menu li.active::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background-color: #f9a109;
+  border-radius: 50%;
+}
+
+/* Divider */
+.adminpenal-menu-divider {
+  height: 1px;
+  background-color: #2b2f48;
+  margin: 0;
+}
+
+/* Logout item pinned at bottom (if you want that) */
+.adminpenal-logout {
+  margin-top: auto;
+  border-bottom: none; /* no line under it */
+}
+
+/* Collapsed styling: hide text */
+.adminpenal-sidebar.closed .adminpenal-menu-text {
+  display: none;
+}
+.adminpenal-sidebar.closed .adminpenal-menu-icon {
+  margin-right: 0;
+  font-size: 24px;
+  text-align: center;
+}
+
+/* Scrollbar styling (optional) */
+.adminpenal-sidebar-menu::-webkit-scrollbar {
+  width: 6px;
+}
+.adminpenal-sidebar-menu::-webkit-scrollbar-track {
+  background-color: #020726;
+}
+.adminpenal-sidebar-menu::-webkit-scrollbar-thumb {
+  background-color: #f9a109;
+  border-radius: 3px;
+}
+
+/* Hide the welcome text when sidebar is closed */
+.adminpenal-sidebar.closed .adminpenal-welcome-text {
+  display: none;
+}
+
+/* Hide the section headers ("Management", "Communications", etc.) when sidebar is closed */
+.adminpenal-sidebar.closed .adminpenal-menu-section {
+  display: none;
+}
+
+/* Hide the menu item text (leaving icons only) when sidebar is closed */
+.adminpenal-sidebar.closed .adminpenal-menu-text {
+  display: none;
+}
+
+/* Optionally center icons in collapsed mode */
+.adminpenal-sidebar.closed .adminpenal-menu-icon {
+  margin-right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.adminpenal-sidebar.closed .adminpenal-sidebar-header {
+  padding: 19px 8px; /* Adjust padding to make room for the icon */
+}
+
+
+
+/* If you want to override the existing grid or flex layout: */
+/* Center the chart row and allow horizontal overflow */
+.single-chart-center {
+  display: flex;           /* centers horizontally if the container is narrower than content */
+  justify-content: center;
+  overflow-x: auto;        /* enable horizontal scroll if needed */
+}
+
+/* Make the chart container wide, remove max-width, and center it */
+.wide-center-chart {
+  width: 100%;             /* let it span full width of parent */
+  max-width: none;         /* remove any fixed max width limit */
+  margin: 0 auto;          /* center it if parent is wider */
+  min-height: 400px;       /* ensure some vertical space */
+  overflow-x: auto;        /* horizontal scrolling if needed */
+}
+
+/* Force the canvas to be wider than normal */
+.wide-center-chart canvas {
+  width: 1400px !important;  /* pick your desired width; you can go larger if needed */
+  height: 500px !important;  /* adjust height as desired */
+}
+
+
+
+/* Make card text white in dark theme */
+.dark-theme .adminpenal-card {
+  color: #fff !important; 
+}
+
+/* If you also want icons in the cards to be white */
+.dark-theme .adminpenal-card .adminpenal-card-icon {
+  color: #fff !important;
+}
+
+/* Similarly, for any headings, paragraphs, or custom classes inside cards */
+.dark-theme .adminpenal-card h3,
+.dark-theme .adminpenal-card p,
+.dark-theme .adminpenal-card-title,
+.dark-theme .adminpenal-card-value {
+  color: #fff !important;
+}
+
+
+/* MAIN CONTENT */
+.adminpenal-main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #f4f6f9; 
+  color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* TOP NAV BAR */
+.adminpenal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 0 20px;
+  height: 60px;
+  transition: background-color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.adminpenal-header-toggle-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.adminpenal-header-right {
+  display: flex;
+  align-items: center;
+}
+
+.adminpenal-profile {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.adminpenal-profile-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 12px;
+  border: 2px solid #3f51b5;
+  transition: transform 0.3s ease;
+}
+
+.adminpenal-profile-icon:hover {
+  transform: scale(1.05);
+}
+
+.adminpenal-profile-details h3 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.adminpenal-profile-details p {
+  margin: 0;
+  font-size: 12px;
+  color: #777;
+}
+
+.adminpenal-content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/***************************************************************
+ * DASHBOARD CARDS / HIGHLIGHT SECTION
+ **************************************************************/
+.adminpenal-dashboard-overview > h2 {
+  margin-bottom: 16px;
+  font-size: 22px;
+  color: #333;
+  text-align: center;
+}
+
+.adminpenal-cards-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.adminpenal-card {
+  background-color: #fff;
+  padding: 24px; /* slightly larger padding */
+  border-radius: 12px; /* softer corners */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* a bit deeper shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.adminpenal-card:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+}
+
+.highlight-card {
+  color: #333;
+}
+
+.card1 {
+  background: linear-gradient(135deg, #d3effe, #f4faff);
+}
+
+.card2 {
+  background: linear-gradient(135deg, #fde9d9, #fff9f0);
+}
+
+.card3 {
+  background: linear-gradient(135deg, #dafaea, #eefef8);
+}
+
+.card4 {
+  background: linear-gradient(135deg, #ffe1e1, #fff5f5);
+}
+
+/* New Icon Styling for Cards */
+.adminpenal-card-icon {
+  font-size: 24px;
+  margin-bottom: 12px;
+  color: #3f51b5;
+}
+
+.adminpenal-gender-icons {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.adminpenal-gender-icon.male {
+  color: #42A5F5;
+}
+
+.adminpenal-gender-icon.female {
+  color: #FF4081;
+}
+
+.adminpenal-card-title {
+  font-size: 1rem;        /* ~16px */
+  font-weight: 600;
+  margin-bottom: 0.75rem; /* space below title */
+  color: #444;            /* a darker gray */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;  /* slight spacing for clarity */
+}
+
+.adminpenal-card-value {
+  font-size: 1.5rem;     /* ~24px */
+  font-weight: 700;
+  margin-bottom: 1rem;    /* space below */
+  color: #222;            /* darker color for better readability */
+  line-height: 1.4;
+}
+
+.adminpenal-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.875rem;  /* ~14px */
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 0;
+  text-transform: uppercase;
+}
+
+.adminpenal-badge.success {
+  background-color: #4caf50;
+}
+.adminpenal-badge.warning {
+  background-color: #ff9800;
+}
+.adminpenal-badge.danger {
+  background-color: #f44336;
+}
+
+/* If you still use progress bars */
+.adminpenal-progress {
+  width: 100%;
+  height: 8px;
+  background-color: #eee;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.adminpenal-progress-bar {
+  height: 100%;
+  background-color: #3f51b5;
+  color: #fff;
+  font-size: 10px;
+  text-align: center;
+  line-height: 1.6;
+  border-radius: 4px;
+}
+
+/***************************************************************
+ * RESPONSIVE ADJUSTMENTS
+ **************************************************************/
+@media (max-width: 1024px) {
+  .adminpenal-sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    z-index: 1000;
+  }
+  .adminpenal-main-content {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .adminpenal-sidebar-header {
+    padding: 10px;
+  }
+  .adminpenal-sidebar-title {
+    font-size: 16px;
+  }
+  .adminpenal-menu-icon {
+    font-size: 14px;
+  }
+  .adminpenal-menu-text {
+    font-size: 12px;
+  }
+  .adminpenal-header-toggle-btn {
+    display: block;
+  }
+  .adminpenal-sidebar.closed {
+    transform: translateX(-100%);
+  }
+  .adminpenal-sidebar.open {
+    transform: translateX(0);
+  }
+  .adminpenal-content {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .adminpenal-profile-details h3 {
+    font-size: 12px;
+  }
+  .adminpenal-profile-details p {
+    font-size: 10px;
+  }
+  .adminpenal-card-value {
+    font-size: 20px;
+  }
+}
+
+/***************************************************************
+ * USERMANAGEMENT (adminusermange-*) 
+ **************************************************************/
+.adminusermange-container {
+  padding: 20px;
+  background-color: transparent;
+  color: #333;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.adminusermange-title {
+  text-align: left;
+  margin-bottom: 20px;
+  color: #3f51b5;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.adminusermange-table-container {
+  overflow-x: auto;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+}
+
+.adminusermange-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.adminusermange-table-header {
+  padding: 10px;
+  background-color: #f5f7fa;
+  border-bottom: 2px solid #e0e0e0;
+  text-align: left;
+  color: #555;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.adminusermange-table-row:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.adminusermange-table-row:hover {
+  background-color: #f1f1f1;
+}
+
+.adminusermange-table-cell {
+  padding: 10px;
+  border-bottom: 1px solid #e0e0e0;
+  vertical-align: middle;
+  font-size: 14px;
+}
+
+/* Inputs & editing */
+.adminusermange-input,
+.adminusermange-select,
+.adminusermange-textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #333;
+  font-size: 14px;
+}
+
+.adminusermange-input:focus,
+.adminusermange-select:focus,
+.adminusermange-textarea:focus {
+  outline: none;
+  border-color: #3f51b5;
+  box-shadow: 0 0 5px rgba(63,81,181,0.2);
+}
+
+.adminusermange-profile-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.adminusermange-no-image {
+  color: #999;
+}
+
+.adminusermange-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.adminusermange-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 14px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.adminusermange-button:hover {
+  transform: scale(1.05);
+}
+
+.adminusermange-button.edit {
+  background-color: #3f51b5;
+}
+.adminusermange-button.delete {
+  background-color: #f44336;
+}
+.adminusermange-button.save {
+  background-color: #4caf50;
+}
+.adminusermange-button.cancel {
+  background-color: #9e9e9e;
+}
+
+.adminusermange-loading,
+.adminusermange-error {
+  text-align: center;
+  padding: 20px;
+  font-size: 18px;
+}
+
+.adminusermange-error {
+  color: #f44336;
+}
+
+/***************************************************************
+ * FLOATING LABEL INPUTS
+ **************************************************************/
+.floating-label-group {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.floating-input,
+.floating-input:focus,
+.floating-input:valid {
+  width: 100%;
+  border: 1px solid #ccc;
+  background: #fff;
+  outline: none;
+  border-radius: 4px;
+  font-size: 14px;
+  padding: 12px 12px 12px;
+  color: #333;
+  transition: border-color 0.3s ease;
+}
+
+.floating-input:focus {
+  border-color: #3f51b5;
+  box-shadow: 0 0 5px rgba(63,81,181,0.2);
+}
+
+.floating-label {
+  position: absolute;
+  pointer-events: none;
+  left: 12px;
+  top: 12px;
+  transition: 0.2s ease all;
+  color: #999;
+  font-size: 14px;
+}
+
+.floating-input:focus ~ .floating-label,
+.floating-input:not(:placeholder-shown) ~ .floating-label {
+  top: -8px;
+  left: 8px;
+  font-size: 12px;
+  background-color: #fff;
+  padding: 0 4px;
+}
+
+/* For textareas */
+.floating-input.floating-textarea {
+  resize: vertical;
+}
+
+/* For selects, we do a wrapper */
+.select-wrapper {
+  position: relative;
+}
+
+.select-wrapper select {
+  appearance: none;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  padding: 12px;
+  font-size: 14px;
+  color: #333;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.select-wrapper select:focus {
+  border-color: #3f51b5;
+  box-shadow: 0 0 5px rgba(63,81,181,0.2);
+}
+
+.select-wrapper .floating-label {
+  left: 12px;
+  top: 12px;
+}
+
+.select-wrapper select:focus ~ .floating-label,
+.select-wrapper select:not(:empty) ~ .floating-label {
+  top: -8px;
+  left: 8px;
+  font-size: 12px;
+  background-color: #fff;
+  padding: 0 4px;
+}
+
+/***************************************************************
+ * STORYMANAGEMENT (adminStoryManagemente-*)
+ **************************************************************/
+.adminStoryManagemente-container {
+  padding: 20px;
+  background-color: transparent;
+  color: #333;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.adminStoryManagemente-title {
+  text-align: left;
+  margin-bottom: 20px;
+  color: #3f51b5;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.adminStoryManagemente-error {
+  text-align: center;
+  padding: 10px;
+  background-color: #f44336;
+  color: #fff;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.adminStoryManagemente-loading {
+  text-align: center;
+  padding: 20px;
+  font-size: 18px;
+  color: #3f51b5;
+}
+
+.adminStoryManagemente-form-section {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+}
+
+.adminStoryManagemente-subtitle {
+  color: #3f51b5;
+  margin-bottom: 15px;
+  text-align: left;
+  font-size: 18px;
+}
+
+.adminStoryManagemente-form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.adminStoryManagemente-form-group label {
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.adminStoryManagemente-input,
+.adminStoryManagemente-textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #333;
+  font-size: 14px;
+}
+
+.adminStoryManagemente-input:focus,
+.adminStoryManagemente-textarea:focus {
+  outline: none;
+  border-color: #3f51b5;
+  box-shadow: 0 0 5px rgba(63,81,181,0.2);
+}
+
+.adminStoryManagemente-textarea {
+  resize: vertical;
+}
+
+.adminStoryManagemente-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 14px;
+  color: #fff;
+  margin-right: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.adminStoryManagemente-button.add {
+  background-color: #4caf50;
+}
+.adminStoryManagemente-button.edit {
+  background-color: #3f51b5;
+}
+.adminStoryManagemente-button.delete {
+  background-color: #f44336;
+}
+.adminStoryManagemente-button.save {
+  background-color: #4caf50;
+}
+.adminStoryManagemente-button.cancel {
+  background-color: #9e9e9e;
+}
+
+.adminStoryManagemente-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.adminStoryManagemente-story-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+}
+
+.adminStoryManagemente-story-content h3 {
+  color: #3f51b5;
+  margin-bottom: 10px;
+}
+
+.adminStoryManagemente-story-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.adminStoryManagemente-story-author {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.adminStoryManagemente-story-description {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.adminStoryManagemente-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/***************************************************************
+ * NOVELMANAGEMENT (adminNovelManagement-*)
+ **************************************************************/
+.adminNovelManagement-container {
+  padding: 20px;
+  background-color: transparent;
+  color: #333;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.adminNovelManagement-title {
+  text-align: left;
+  margin-bottom: 20px;
+  color: #3f51b5;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.adminNovelManagement-error {
+  text-align: center;
+  padding: 10px;
+  background-color: #f44336;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.adminNovelManagement-loading {
+  text-align: center;
+  padding: 20px;
+  font-size: 18px;
+  color: #3f51b5;
+}
+
+.adminNovelManagement-form-section {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+}
+
+.adminNovelManagement-subtitle {
+  color: #3f51b5;
+  margin-bottom: 15px;
+  text-align: left;
+  font-size: 18px;
+}
+
+.adminNovelManagement-form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.adminNovelManagement-form-group label {
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.adminNovelManagement-input,
+.adminNovelManagement-select,
+.adminNovelManagement-textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #333;
+  font-size: 14px;
+}
+
+.adminNovelManagement-input:focus,
+.adminNovelManagement-select:focus,
+.adminNovelManagement-textarea:focus {
+  outline: none;
+  border-color: #3f51b5;
+  box-shadow: 0 0 5px rgba(63,81,181,0.2);
+}
+
+.adminNovelManagement-textarea {
+  resize: vertical;
+}
+
+.adminNovelManagement-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 14px;
+  color: #fff;
+  margin-right: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.adminNovelManagement-button.add {
+  background-color: #4caf50;
+}
+.adminNovelManagement-button.edit {
+  background-color: #3f51b5;
+}
+.adminNovelManagement-button.delete {
+  background-color: #f44336;
+}
+.adminNovelManagement-button.save {
+  background-color: #4caf50;
+}
+.adminNovelManagement-button.cancel {
+  background-color: #9e9e9e;
+}
+
+.adminNovelManagement-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.adminNovelManagement-novel-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+}
+
+.adminNovelManagement-novel-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.adminNovelManagement-novel-title {
+  color: #3f51b5;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.adminNovelManagement-novel-shortId,
+.adminNovelManagement-novel-authorEmail,
+.adminNovelManagement-novel-textfileId,
+.adminNovelManagement-novel-collaborators {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 5px;
+}
+
+.adminNovelManagement-novel-description {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.adminNovelManagement-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/***************************************************************
+ * URDUMANAGEMENT (adminUrduManagement-*)
+ **************************************************************/
+.adminUrduManagement-container {
+  padding: 20px;
+  background-color: transparent;
+  color: #333;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.adminUrduManagement-title {
+  text-align: left;
+  margin-bottom: 20px;
+  color: #3f51b5;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.adminUrduManagement-error {
+  text-align: center;
+  padding: 10px;
+  background-color: #f44336;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.adminUrduManagement-loading {
+  text-align: center;
+  padding: 20px;
+  font-size: 18px;
+  color: #3f51b5;
+}
+
+.adminUrduManagement-form-section {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+}
+
+.adminUrduManagement-subtitle {
+  color: #3f51b5;
+  margin-bottom: 15px;
+  text-align: left;
+  font-size: 18px;
+}
+
+.adminUrduManagement-form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.adminUrduManagement-form-group label {
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.adminUrduManagement-input,
+.adminUrduManagement-select,
+.adminUrduManagement-textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #333;
+  font-size: 14px;
+}
+
+.adminUrduManagement-input:focus,
+.adminUrduManagement-select:focus,
+.adminUrduManagement-textarea:focus {
+  outline: none;
+  border-color: #3f51b5;
+  box-shadow: 0 0 5px rgba(63,81,181,0.2);
+}
+
+.adminUrduManagement-textarea {
+  resize: vertical;
+}
+
+.adminUrduManagement-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 14px;
+  color: #fff;
+  margin-right: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.adminUrduManagement-button.add {
+  background-color: #4caf50;
+}
+.adminUrduManagement-button.edit {
+  background-color: #3f51b5;
+}
+.adminUrduManagement-button.delete {
+  background-color: #f44336;
+}
+.adminUrduManagement-button.save {
+  background-color: #4caf50;
+}
+.adminUrduManagement-button.cancel {
+  background-color: #9e9e9e;
+}
+
+.adminUrduManagement-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.adminUrduManagement-item {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+  margin-bottom: 10px;
+}
+
+.adminUrduManagement-edit-form {
+  background-color: #f7f7f7;
+  padding: 15px;
+  border-radius: 6px;
+}
+
+.adminUrduManagement-edit-form h3 {
+  color: #3f51b5;
+  margin-bottom: 10px;
+}
+
+.adminUrduManagement-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.adminUrduManagement-item-title {
+  color: #3f51b5;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.adminUrduManagement-item-description {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.adminUrduManagement-item-genres,
+.adminUrduManagement-item-author,
+.adminUrduManagement-item-collaborators {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 5px;
+}
+
+.adminUrduManagement-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/***************************************************************
+ * NOTIFYUSERS (adminNotifyUsers-*)
+ **************************************************************/
+.adminNotifyUsers-container {
+  padding: 20px;
+  background-color: transparent;
+  color: #333;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.adminNotifyUsers-title {
+  text-align: left;
+  margin-bottom: 20px;
+  color: #3f51b5;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.adminNotifyUsers-error {
+  text-align: center;
+  padding: 10px;
+  background-color: #f44336;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.adminNotifyUsers-form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+}
+
+.adminNotifyUsers-form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.adminNotifyUsers-form-group label {
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.adminNotifyUsers-select,
+.adminNotifyUsers-textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #333;
+  font-size: 14px;
+}
+
+.adminNotifyUsers-select:focus,
+.adminNotifyUsers-textarea:focus {
+  outline: none;
+  border-color: #3f51b5;
+  box-shadow: 0 0 5px rgba(63,81,181,0.2);
+}
+
+.adminNotifyUsers-textarea {
+  resize: vertical;
+}
+
+.adminNotifyUsers-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 16px;
+  font-size: 14px;
+  color: #fff;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.adminNotifyUsers-button.send {
+  background-color: #4caf50;
+}
+
+.adminNotifyUsers-button:hover {
+  opacity: 0.9;
+}
+
+/* Disabled button */
+.adminNotifyUsers-button:disabled {
+  background-color: #9e9e9e;
+  cursor: not-allowed;
+}
+
+/***************************************************************
+ * Dashboard Cards / Buttons Enhancements
+ **************************************************************/
+.adminpenal-dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.adminpenal-refresh-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  font-size: 14px;
+  background-color: #3f51b5;
+  border: none;
+  border-radius: 25px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.adminpenal-refresh-button:hover {
+  background-color: #2c3a8a;
+  transform: scale(1.05);
+}
+
+.adminpenal-stats-error {
+  background-color: #f44336;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: 500;
+}
+
+/***************************************************************
+ * THEMES (Light / Dark)
+ **************************************************************/
+.light-theme {
+  background-color: #f4f6f9; /* Light background */
+  color: #333;
+}
+
+.dark-theme {
+  background-color: #1c1c1c; /* Dark background */
+  color: #d0d0d0;
+}
+
+.dark-theme .adminpenal-sidebar {
+  background-color: #333;
+  border-right: 1px solid #444;
+}
+
+.dark-theme .adminpenal-sidebar-menu li {
+  color: #ccc;
+  border-bottom: 1px solid #444;
+}
+
+.dark-theme .adminpenal-sidebar-menu li:hover {
+  background-color: #555;
+}
+
+.dark-theme .adminpenal-sidebar-menu li.active {
+  background-color: #666;
+  border-left: 4px solid #ef6c00;
+}
+
+.dark-theme .adminpenal-sidebar-header {
+  background-color: #444;
+}
+
+.dark-theme .adminpenal-header {
+  background-color: #333;
+  border-bottom: 1px solid #444;
+}
+
+.dark-theme .adminpenal-profile-icon {
+  border-color: #ef6c00;
+}
+
+.dark-theme .adminpenal-content {
+  background-color: #1c1c1c;
+  color: #d0d0d0;
+}
+
+.dark-theme .adminpenal-card {
+  background-color: #2b2b2b;
+}
+
+.dark-theme .highlight-card.card1 {
+  background: linear-gradient(135deg, #203040, #303030);
+}
+
+.dark-theme .highlight-card.card2 {
+  background: linear-gradient(135deg, #402830, #302030);
+}
+
+.dark-theme .highlight-card.card3 {
+  background: linear-gradient(135deg, #204030, #203030);
+}
+
+.dark-theme .highlight-card.card4 {
+  background: linear-gradient(135deg, #403020, #302820);
+}
+
+.dark-theme .adminpenal-card-icon {
+  color: #FF4081; /* Adjust icon color for dark mode */
+}
+
+.dark-theme .adminpenal-gender-icon.male {
+  color: #42A5F5;
+}
+
+.dark-theme .adminpenal-gender-icon.female {
+  color: #FF4081;
+}
+
+.dark-theme .adminpenal-badge.success {
+  background-color: #388e3c;
+}
+
+.dark-theme .adminpenal-badge.warning {
+  background-color: #ffa000;
+}
+
+.dark-theme .adminpenal-badge.danger {
+  background-color: #d32f2f;
+}
+
+.dark-theme .adminpenal-progress {
+  background-color: #444;
+}
+
+.dark-theme .adminpenal-progress-bar {
+  background-color: #ef6c00;
+}
+
+.dark-theme .adminpenal-refresh-button {
+  background-color: #555;
+  color: #fff;
+}
+
+.dark-theme .adminpenal-refresh-button:hover {
+  background-color: #777;
+}
+
+.dark-theme .adminpenal-stats-error {
+  background-color: #d32f2f;
+}
+
+/* 
+  ... existing code from previous single-file CSS ...
+*/
+
+/***************************************************************
+ * GLOBAL SEARCH (Aesthetic Updates)
+ **************************************************************/
+.adminpenal-global-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 0 20px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.adminpenal-global-search:hover {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.12);
+}
+
+.adminpenal-search-icon {
+  margin: 0 10px;
+  color: #999;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.adminpenal-global-search input {
+  border: none;
+  background: transparent;
+  padding: 10px;
+  width: 220px;
+  outline: none;
+  font-size: 14px;
+  color: #333;
+  transition: width 0.3s ease;
+}
+
+.adminpenal-global-search input::placeholder {
+  color: #aaa;
+}
+
+.adminpenal-global-search input:focus {
+  background-color: #fff;
+  width: 260px; /* Expand slightly on focus */
+}
+
+.dark-theme .adminpenal-global-search {
+  background-color: #2a2a2a;
+  border: 1px solid #555;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.dark-theme .adminpenal-global-search:hover {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.5);
+}
+
+.dark-theme .adminpenal-search-icon {
+  color: #ccc;
+}
+
+.dark-theme .adminpenal-global-search input {
+  color: #ddd;
+}
+
+.dark-theme .adminpenal-global-search input::placeholder {
+  color: #888;
+}
+
+/***************************************************************
+ * THEME TOGGLE BTN
+ **************************************************************/
+.adminpenal-theme-toggle-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #333;
+  margin-right: 15px;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.adminpenal-theme-toggle-btn:hover {
+  color: #ef6c00;
+  transform: rotate(20deg);
+}
+
+/***************************************************************
+ * ANALYTICS / CHARTS
+ **************************************************************/
+.adminpenal-analytics-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* three columns for three charts */
+  gap: 30px;
+  margin-top: 30px;
+  /* You can also add background or border if you want a "card" around them. */
+}
+
+.adminpenal-chart-container {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+  min-height: 350px; /* increased min height for better visuals */
+  position: relative; /* helps with absolutely positioned chart elements */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dark-theme .adminpenal-chart-container {
+  background-color: #2f2f2f;
+}
+
+.adminpenal-chart-container canvas {
+  width: 100% !important; 
+  height: 100% !important;
+  max-height: 400px; /* limit to a certain size if you want */
+}
+
+/* Dropdown container */
+.adminpenal-dropdown-container {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.adminpenal-dropdown-container label {
+  margin-right: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+.adminpenal-dropdown {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  background-color: #fff;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.adminpenal-dropdown:hover {
+  border-color: #3f51b5;
+  box-shadow: 0 0 5px rgba(63,81,181,0.2);
+}
+
+.dark-theme .adminpenal-dropdown-container label {
+  color: #ddd;
+}
+
+.dark-theme .adminpenal-dropdown {
+  background-color: #444;
+  color: #ddd;
+  border: 1px solid #555;
+}
+
+.dark-theme .adminpenal-dropdown:hover {
+  border-color: #ef6c00;
+  box-shadow: 0 0 5px rgba(239,108,0,0.3);
+}
+
+/***************************************************************
+ * ADDITIONAL STYLES FOR BETTER AESTHETICS
+ **************************************************************/
+
+/* Smooth transitions for theme changes */
+.adminpenal-container,
+.adminpenal-sidebar,
+.adminpenal-main-content,
+.adminpenal-header,
+.adminpenal-content,
+.adminpenal-card,
+.adminpenal-chart-container,
+.adminpenal-dashboard-overview,
+.adminpenal-cards-row,
+.adminpenal-analytics-row,
+.adminpenal-dropdown-container,
+.adminpenal-dropdown,
+.adminpenal-global-search,
+.adminpenal-theme-toggle-btn,
+.adminpenal-sidebar-menu li,
+.adminpenal-profile-details h3,
+.adminpenal-profile-details p,
+.adminpenal-refresh-button,
+.adminpenal-stats-error,
+.adminpenal-card-icon,
+.adminpenal-gender-icon {
+  transition: all 0.3s ease;
+}
+
+/* Responsive adjustments for analytics charts */
+@media (max-width: 1200px) {
+  .adminpenal-analytics-row {
+    grid-template-columns: 1fr 1fr; /* two columns */
+  }
+}
+
+@media (max-width: 900px) {
+  .adminpenal-analytics-row {
+    grid-template-columns: 1fr; /* single column */
+  }
+}
